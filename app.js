@@ -155,6 +155,43 @@ function setupSpotlightCarousel(){
   show(available[0]??0,true);
   restart();
 }
+function setupSpotlightZoom(){
+  const carousel=$('#mainSpotlightCarousel');
+  if(!carousel)return;
+  const images=$$('.spotlight-slide img',carousel);
+  if(!images.length)return;
+  let overlay=$('#spotlightZoomOverlay');
+  if(!overlay){
+    overlay=document.createElement('div');
+    overlay.id='spotlightZoomOverlay';
+    overlay.className='spotlight-zoom-overlay';
+    overlay.setAttribute('aria-hidden','true');
+    overlay.innerHTML='<button class="spotlight-zoom-close" type="button" aria-label="Close image">×</button><div class="spotlight-zoom-stage"><img class="spotlight-zoom-image" alt="Expanded spotlight image"></div><div class="spotlight-zoom-hint">PINCH OR SCROLL TO ZOOM • DRAG TO MOVE</div>';
+    document.body.appendChild(overlay);
+  }
+  const zoomImg=$('.spotlight-zoom-image',overlay);
+  const close=()=>{overlay.classList.remove('open');overlay.setAttribute('aria-hidden','true');document.body.classList.remove('spotlight-zoom-open');zoomImg.style.transform='translate(0px,0px) scale(1)';};
+  $('.spotlight-zoom-close',overlay)?.addEventListener('click',close);
+  overlay.addEventListener('click',e=>{if(e.target===overlay||e.target.classList.contains('spotlight-zoom-stage'))close()});
+  let scale=1,tx=0,ty=0,startX=0,startY=0,startTx=0,startTy=0,startDist=0,startScale=1,panning=false;
+  const apply=()=>{zoomImg.style.transform=`translate(${tx}px,${ty}px) scale(${scale})`;};
+  const dist=(a,b)=>Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY);
+  const open=img=>{zoomImg.src=img.currentSrc||img.src;zoomImg.alt=img.alt||'Expanded spotlight image';scale=1;tx=0;ty=0;apply();overlay.classList.add('open');overlay.setAttribute('aria-hidden','false');document.body.classList.add('spotlight-zoom-open');};
+  images.forEach(img=>img.addEventListener('click',()=>open(img)));
+  zoomImg.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(1,Math.min(4,scale+(e.deltaY<0?.22:-.22)));apply();},{passive:false});
+  zoomImg.addEventListener('touchstart',e=>{
+    if(e.touches.length===2){startDist=dist(e.touches[0],e.touches[1]);startScale=scale;return;}
+    if(e.touches.length===1){panning=true;startX=e.touches[0].clientX;startY=e.touches[0].clientY;startTx=tx;startTy=ty;}
+  },{passive:false});
+  zoomImg.addEventListener('touchmove',e=>{
+    e.preventDefault();
+    if(e.touches.length===2&&startDist){scale=Math.max(1,Math.min(4,startScale*(dist(e.touches[0],e.touches[1])/startDist)));apply();return;}
+    if(e.touches.length===1&&panning){tx=startTx+(e.touches[0].clientX-startX);ty=startTy+(e.touches[0].clientY-startY);apply();}
+  },{passive:false});
+  zoomImg.addEventListener('touchend',e=>{if(e.touches.length<2)startDist=0;if(e.touches.length===0)panning=false;if(scale===1){tx=0;ty=0;apply();}});
+  zoomImg.addEventListener('dblclick',()=>{scale=scale>1?1:2;tx=0;ty=0;apply();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+}
 const EVENT_DETAILS={
   'LITERARY LEAGUE':{date:'30 October 2026',time:'10 AM - 12 PM',venue:'LT 1',teamSize:'TEAM OF 4',registration:'https://forms.gle/bQcVgRGf1o2c2sh39'},
   'PIMS VILLA':{date:'31 October 2026',time:'10 AM - 12 PM',venue:'LT 1',teamSize:'LONE WOLF',registration:'https://docs.google.com/forms/d/e/1FAIpQLSdoznZNnDlXr1Loeqq08bC6iTsZNt6VB7Y06Bkj8Lh12zhorw/viewform?usp=publish-editor'},
@@ -178,7 +215,7 @@ const EVENT_DETAILS={
   'RECRAFT AND REPURPOSE':{date:'31 October 2026',time:'11:30 AM - 1 PM',venue:'AUDITORIUM',teamSize:'MAX GROUP OF 2',registration:'https://docs.google.com/forms/d/14ANOfeuAXF9yNfaf-PQD5RQGt4suXvg0J18fpItwVlM/edit?ts=6abf6102'},
   'CANVAS FOR A CHANGE':{date:'31 October 2026',time:'10 AM - 11:30 AM',venue:'AUDITORIUM',teamSize:'LONE WOLF',registration:'https://docs.google.com/forms/d/1RX5uJ-QzOLaERQPs2--j0IcOR8jePY6znTWX3xd0gKQ/edit?ts=6abf622c'},
   'PIXELS AND PAIN':{date:'1 November 2026',time:'2 PM - 3 PM',venue:'LT 2',teamSize:'MAX GROUP OF 5',registration:'https://docs.google.com/forms/d/e/1FAIpQLScRGbgRtXOH7vUkWgYpZE1jHMCm-lgiH0iEYv54TDk2QAnBsA/viewform?usp=publish-editor'},
-  'MURDER MYSTERY':{date:'1 November 2026',time:'12 PM - 2 PM',venue:'PIMS CORRIDOR',teamSize:'TEAM OF 5',registration:'https://sites.google.com/view/fandomsyndicatexinsomnia/home'},
+  'MURDER MYSTERY':{date:'1 November 2026',time:'12 PM - 2 PM',venue:'PIMS CORRIDOR',teamSize:'TEAM OF 6',registration:'https://sites.google.com/view/fandomsyndicatexinsomnia/home'},
   'PIMS ROADIES':{date:'31 October 2026',time:'1 PM - 2 PM',venue:'AUDITORIUM',teamSize:'LONE WOLF',registration:'https://sites.google.com/view/fandomsyndicatexinsomnia/home'},
   'CLASH ROYALE':{date:'30 October 2026',time:'2 PM - 3 PM',venue:'LT 1',teamSize:'LONE WOLF',registration:'https://sites.google.com/view/fandomsyndicatexinsomnia/home'},
   'BGMI':{date:'30 October 2026',time:'2 PM - 3 PM',venue:'LT 1',teamSize:'TEAM OF 4',registration:'https://sites.google.com/view/fandomsyndicatexinsomnia/home'},
@@ -189,14 +226,14 @@ const EVENT_DETAILS={
 };
 function eventSlug(title){return slugifyEvent(title)}
 function eventPosterPath(title){return `assets/posters/${posterOverrides[title]||slugifyEvent(title)+'.jpg'}`}
-function eventShareText(title,d,includePosterLink=true){
-  const posterUrl=new URL(eventPosterPath(title),location.href).href;
+function eventShareText(title,d){
+  const websiteUrl=new URL('index.html',location.href).href;
   const registration=d.registration&&d.registration!=='#'?d.registration:'Registration details on the event page';
-  return `🌙 INSOMNIA 2026 — ${title}\n\n📅 ${d.date}\n⏰ ${d.time}\n📍 ${d.venue}\n👥 ${d.teamSize}\n\n🔥 Ready to be part of it? Register here:\n${registration}\n\n${includePosterLink?`🖼️ Poster: ${posterUrl}`:'🖼️ Poster attached'}\n\nSTAY AWAKE. DREAM BEYOND. ✦`;
+  return `🌙 INSOMNIA 2026\n\n⚡ ${title}\n\n📅 ${d.date}\n⏰ ${d.time}\n📍 ${d.venue}\n👥 ${d.teamSize}\n\n🔥 Think you can take this one? Step into the night and make your mark.\n\n🎟️ Register: ${registration}\n🌐 Explore INSOMNIA: ${websiteUrl}\n\nSTAY AWAKE. DREAM BEYOND. ✦`;
 }
 async function shareEvent(title,d){
   const posterUrl=new URL(eventPosterPath(title),location.href).href;
-  const text=eventShareText(title,d,true);
+  const text=eventShareText(title,d);
   try{
     if(navigator.share){
       let files=[];
@@ -211,7 +248,7 @@ async function shareEvent(title,d){
         }
       }catch(_){ }
       // Native Web Share can pass the actual poster image to WhatsApp. When it does, avoid cluttering the message with a second poster URL.
-      const nativeText=eventShareText(title,d,files.length===0);
+      const nativeText=text;
       await navigator.share(files.length?{title:`INSOMNIA — ${title}`,text:nativeText,files}:{title:`INSOMNIA — ${title}`,text:nativeText});
       return;
     }
@@ -355,5 +392,5 @@ function renderEventCatalog(){
   }).join('');
   grid.innerHTML=dayMarkup;
 }
-function init(){setupNav();renderCategories();renderEventCatalog();setupPass();setupExternalLinks();setupDeveloperInstagram();setupPassCopy();setupSpotlightCarousel();setupAnimations();setupParallax();setupCinematicMotion();if($('#eventGrid'))renderEventsPage()}
+function init(){setupNav();renderCategories();renderEventCatalog();setupPass();setupExternalLinks();setupDeveloperInstagram();setupPassCopy();setupSpotlightCarousel();setupSpotlightZoom();setupAnimations();setupParallax();setupCinematicMotion();if($('#eventGrid'))renderEventsPage()}
 document.addEventListener('DOMContentLoaded',init);
