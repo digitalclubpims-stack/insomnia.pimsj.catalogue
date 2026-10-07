@@ -7,7 +7,7 @@ const categories=[
  {slug:'literary',name:'LITERARY',desc:'Literary League, PIMS Villa, Medical MedMaster, Cinema Clash & MBBS Through Ages.',color:'yellow',icon:'book'},
  {slug:'cultural',name:'CULTURAL',desc:'Singing Competition, Dance Competition, MBBS Through Ages & Bhangra.',color:'pink',icon:'mask'},
  {slug:'arts',name:'ARTS',desc:'Inkverse, Flavor Without Fire, T-Volution & Rangoli.',color:'purple',icon:'palette'},
- {slug:'digital',name:'DIGITAL',desc:'AI Prompt Battle, A Day in the Life of MBBS & Digital Poster Making.',color:'orange',icon:'monitor'},
+ {slug:'digital',name:'DIGITAL',desc:'AI Prompt Battle, A Day in the Life of MBBS & Design Rush.',color:'orange',icon:'monitor'},
  {slug:'clinical',name:'MEDXPLORE CLINICAL',desc:'Cut to Closure Workshop, Materna MiniMed Workshop & Clinexcel Workshop.',color:'pink',icon:'medical'},
  {slug:'social',name:'SOCIAL',desc:'Sansad Unfiltered, Recraft and Repurpose, Canvas for a Change & Pixels and Pain.',color:'yellow',icon:'heart'},
  {slug:'fandom',name:'FANDOM',desc:'Murder Mystery & PIMS Roadies.',color:'cyan',icon:'film'},
@@ -19,7 +19,7 @@ const eventData={
  literary:[['LITERARY LEAGUE','A literary showdown built around wit, language, ideas and fast thinking.'],['PIMS VILLA','Step into the villa, meet the characters and play your way through the chaos.'],['MEDICAL MEDMASTER','Put your medical knowledge, recall and clinical thinking to the test.'],['CINEMA CLASH','A celebration of cinema, scenes, characters and the moments every movie lover remembers.'],['MBBS THROUGH AGES','Travel through the eras of MBBS in a creative journey through medicine and student life.']],
  cultural:[['SINGING COMPETITION','Take the mic, own the moment and bring your voice to the Insomnia stage.'],['DANCE COMPETITION','Bring your rhythm, energy and signature moves to the dance floor.'],['MBBS THROUGH AGES','Travel through the eras of MBBS in a creative journey through medicine and student life.'],['BHANGRA','Bring the energy, rhythm and spirit of Bhangra to the Insomnia stage.']],
  arts:[['INKVERSE','Turn ideas into visual expression through ink, line and imagination.'],['FLAVOUR WITHOUT FIRE','Create something delicious and creative without conventional cooking.'],['T-VOLUTION','Transform, create and compete in a hands-on art challenge.'],['RANGOLI COMPETITION','Turn colour, pattern and precision into a visual masterpiece.']],
- digital:[['AI PROMPT BATTLE','Craft precise prompts, think creatively and see how far your imagination can take AI.'],['A DAY IN THE LIFE OF MBBS','Capture the chaos, humour and reality of a day in medical student life.'],['DIGITAL POSTER MAKING','Design a poster that communicates an idea clearly, creatively and memorably.']],
+ digital:[['AI PROMPT BATTLE','Craft precise prompts, think creatively and see how far your imagination can take AI.'],['A DAY IN THE LIFE OF MBBS','Capture the chaos, humour and reality of a day in medical student life.'],['DESIGN RUSH','Turn your digital canvas into a bold visual idea and make your creativity do the talking.']],
  clinical:[['CUT TO CLOSURE WORKSHOP','A practical suturing workshop focused on technique, precision and confidence.'],['MATERNA – MINIMED WORKSHOP','Hands-on learning around maternal and paediatric clinical skills.'],['CLINEXCEL','Build essential clinical skills through practical, focused training.']],
  social:[['SANSAD UNFILTERED','Step into the house, debate policy and represent a constituency in a fast-paced parliamentary simulation.'],['RECRAFT AND REPURPOSE','Turn discarded materials into something creative, useful and worth displaying.'],['CANVAS FOR A CHANGE','Use art as a medium for expression, awareness and positive social impact.'],['PIXELS AND PAIN','Explore the impact of cyberbullying through awareness, expression and conversation.']],
  fandom:[['MURDER MYSTERY','Follow the clues, interrogate the suspects and crack the case before the killer gets away.'],['PIMS ROADIES','A high-energy challenge of personality, teamwork, grit and unexpected tasks.']],
@@ -170,7 +170,7 @@ const EVENT_DETAILS={
   'RANGOLI COMPETITION':{date:'1 November 2026',time:'9 AM - 12 PM',venue:'PIMS CORRIDORS',teamSize:'TEAM OF 2',registration:'https://share.google/845MkynfxM29MfEs2'},
   'AI PROMPT BATTLE':{date:'30 October 2026',time:'12 PM - 1 PM',venue:'AUDITORIUM',teamSize:'LONE WOLF',registration:'https://forms.gle/DuSWkLcpC919vY7g8'},
   'A DAY IN THE LIFE OF MBBS':{date:'31 October 2026',time:'12 PM - 2 PM',venue:'LT 1',teamSize:'LONE WOLF',registration:'https://forms.gle/8c1fRfh2EXxK521LA'},
-  'DIGITAL POSTER MAKING':{date:'1 November 2026',time:'12 PM - 2 PM',venue:'AUDITORIUM',teamSize:'TEAM OF 2',registration:'https://forms.gle/w5bU3sn2sd3SpQPP8'},
+  'DESIGN RUSH':{date:'1 November 2026',time:'12 PM - 2 PM',venue:'AUDITORIUM',teamSize:'TEAM OF 2',registration:'https://forms.gle/w5bU3sn2sd3SpQPP8'},
   'CUT TO CLOSURE WORKSHOP':{date:'17 October 2026',time:'9 AM - 1 PM',venue:'ANATOMY DEPT.',teamSize:'SINGLE',registration:'https://forms.gle/3ZJPaeLiX9Vmz48ZA'},
   'MATERNA – MINIMED WORKSHOP':{date:'17 October 2026',time:'2 PM - 5 PM',venue:'AUDITORIUM',teamSize:'SINGLE',registration:'https://forms.gle/3fjD8W2S4NdNStWq5'},
   'CLINEXCEL':{date:'17 October 2026',time:'10:30 AM - 1 PM',venue:'AUDITORIUM',teamSize:'SINGLE',registration:'https://forms.gle/2Dbsth8aPaNpmf1m6'},
@@ -189,13 +189,14 @@ const EVENT_DETAILS={
 };
 function eventSlug(title){return slugifyEvent(title)}
 function eventPosterPath(title){return `assets/posters/${posterOverrides[title]||slugifyEvent(title)+'.jpg'}`}
-function eventShareText(title,d){
+function eventShareText(title,d,includePosterLink=true){
   const posterUrl=new URL(eventPosterPath(title),location.href).href;
-  return `INSOMNIA 2026\n${title}\n\n${d.date} | ${d.time}\nVENUE: ${d.venue}\nTEAM SIZE: ${d.teamSize}\n\nPoster: ${posterUrl}\n\nStay Awake. Dream Beyond.`;
+  const registration=d.registration&&d.registration!=='#'?d.registration:'Registration details on the event page';
+  return `🌙 INSOMNIA 2026 — ${title}\n\n📅 ${d.date}\n⏰ ${d.time}\n📍 ${d.venue}\n👥 ${d.teamSize}\n\n🔥 Ready to be part of it? Register here:\n${registration}\n\n${includePosterLink?`🖼️ Poster: ${posterUrl}`:'🖼️ Poster attached'}\n\nSTAY AWAKE. DREAM BEYOND. ✦`;
 }
 async function shareEvent(title,d){
   const posterUrl=new URL(eventPosterPath(title),location.href).href;
-  const text=eventShareText(title,d);
+  const text=eventShareText(title,d,true);
   try{
     if(navigator.share){
       let files=[];
@@ -203,15 +204,19 @@ async function shareEvent(title,d){
         const res=await fetch(posterUrl,{cache:'no-cache'});
         if(res.ok){
           const blob=await res.blob();
-          const ext=(blob.type||'image/jpeg').split('/')[1]||'jpeg';
-          const file=new File([blob],`${eventSlug(title)}.${ext}`,{type:blob.type||'image/jpeg'});
-          if(!navigator.canShare||navigator.canShare({files:[file]}))files=[file];
+          const mime=blob.type||'image/jpeg';
+          const ext=(mime.split('/')[1]||'jpeg').replace('jpg','jpg');
+          const file=new File([blob],`${eventSlug(title)}.${ext}`,{type:mime});
+          if(!navigator.canShare || navigator.canShare({files:[file]})) files=[file];
         }
       }catch(_){ }
-      await navigator.share(files.length?{title,text,files}:{title,text});
+      // Native Web Share can pass the actual poster image to WhatsApp. When it does, avoid cluttering the message with a second poster URL.
+      const nativeText=eventShareText(title,d,files.length===0);
+      await navigator.share(files.length?{title:`INSOMNIA — ${title}`,text:nativeText,files}:{title:`INSOMNIA — ${title}`,text:nativeText});
       return;
     }
   }catch(err){if(err&&err.name==='AbortError')return;}
+  // WhatsApp's URL API cannot force an attachment; this fallback sends the complete text + poster URL.
   window.open(`https://wa.me/?text=${encodeURIComponent(text)}`,'_blank','noopener,noreferrer');
 }
 function eventDetails(title,index){
@@ -222,7 +227,7 @@ function eventDetails(title,index){
     registration:d.registration||'#'
   };
 }
-const posterOverrides={'CUT TO CLOSURE WORKSHOP':'cut-to-closure-workshop.jpg','CLINEXCEL':'clinexcel-workshop.jpg','SANSAD UNFILTERED':'sansad-unfiltered.jpg','UNPOSED CHALLENGE':'unposed.jpg','BEHIND THE SCENES PHOTOGRAPHY':'behind-the-scenes.jpg','RANGOLI COMPETITION':'rangoli.jpg'};
+const posterOverrides={'CUT TO CLOSURE WORKSHOP':'cut-to-closure-workshop.jpg','CLINEXCEL':'clinexcel-workshop.jpg','SANSAD UNFILTERED':'sansad-unfiltered.jpg','DESIGN RUSH':'design-rush.jpg','UNPOSED CHALLENGE':'unposed.jpg','BEHIND THE SCENES PHOTOGRAPHY':'behind-the-scenes.jpg','RANGOLI COMPETITION':'rangoli.jpg'};
 function slugifyEvent(title){return title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
 function renderEventCard(e,i,categorySlug){
   const d=eventDetails(e.title,i);
@@ -328,9 +333,9 @@ function renderEventCatalog(){
   Object.values(eventData).flat().forEach(([title,desc])=>{if(!byTitle.has(title))byTitle.set(title,desc)});
   specialEventData.forEach(([title,desc])=>byTitle.set(title,desc));
   const days=[
-    {date:'30 October 2026',label:'DAY 01',short:'30 OCT'},
-    {date:'31 October 2026',label:'DAY 02',short:'31 OCT'},
-    {date:'1 November 2026',label:'DAY 03',short:'01 NOV'}
+    {date:'30 October 2026',label:'DAY 01'},
+    {date:'31 October 2026',label:'DAY 02'},
+    {date:'1 November 2026',label:'DAY 03'}
   ];
   const parseTime=t=>{const m=(t||'').match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);if(!m)return 9999;let h=+m[1],min=+(m[2]||0),ap=m[3].toUpperCase();if(h===12)h=0;if(ap==='PM')h+=12;return h*60+min};
   const dayMarkup=days.map(day=>{
@@ -338,18 +343,17 @@ function renderEventCatalog(){
     return `<section class="catalog-day reveal" id="catalog-${slugifyEvent(day.date)}">
       <div class="catalog-day-head"><div><span class="catalog-day-label">${day.label}</span><h2>${day.date}</h2></div><span class="catalog-day-count">${items.length} EVENTS</span></div>
       <div class="catalog-list">${items.map((x,i)=>{
-        const slug=eventSlug(x.title), poster=eventPosterPath(x.title);
-        return `<a class="catalog-event" href="events.html?event=${encodeURIComponent(x.title)}" data-event-slug="${slug}">
+        const poster=eventPosterPath(x.title);
+        return `<a class="catalog-event" href="events.html?event=${encodeURIComponent(x.title)}" data-event-slug="${eventSlug(x.title)}">
           <div class="catalog-time"><strong>${x.d.time.split(' - ')[0]}</strong><span>${x.d.time.includes(' - ')?'— '+x.d.time.split(' - ')[1]:''}</span></div>
           <div class="catalog-poster"><img src="${poster}" alt="${x.title} poster" loading="lazy" onerror="this.style.display='none'"></div>
-          <div class="catalog-event-main"><div class="catalog-index">${String(i+1).padStart(2,'0')} / ${day.short}</div><h3>${x.title}</h3><p>${x.desc}</p><div class="catalog-meta"><span>VENUE <b>${x.d.venue}</b></span><span>TEAM <b>${x.d.teamSize}</b></span></div></div>
-          <span class="catalog-arrow">↗</span>
+          <div class="catalog-event-main"><h3>${x.title}</h3><div class="catalog-venue"><span>VENUE</span><b>${x.d.venue}</b></div></div>
+          <span class="catalog-arrow" aria-hidden="true">↗</span>
         </a>`;
       }).join('')}</div>
     </section>`;
   }).join('');
   grid.innerHTML=dayMarkup;
 }
-
 function init(){setupNav();renderCategories();renderEventCatalog();setupPass();setupExternalLinks();setupDeveloperInstagram();setupPassCopy();setupSpotlightCarousel();setupAnimations();setupParallax();setupCinematicMotion();if($('#eventGrid'))renderEventsPage()}
 document.addEventListener('DOMContentLoaded',init);

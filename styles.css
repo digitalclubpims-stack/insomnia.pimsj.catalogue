@@ -2858,3 +2858,61 @@ body{font-family:var(--body)!important}
   .catalog-event-main p{font-size:8.2px}
   .catalog-meta{font-size:5.5px}
 }
+
+/* =========================================================
+   INSOMNIA V11.2 — CATALOGUE + MOBILE NAV REFINEMENT
+   ========================================================= */
+@media(max-width:850px){
+  /* Give the front-page/header controls enough physical size to be genuinely tappable and readable. */
+  .nav{gap:6px!important;padding-left:18px!important;padding-right:12px!important}
+  .nav .brand{flex:0 0 120px!important;max-width:120px!important}
+  .nav .brand-logo,.nav .brand img{width:120px!important;max-width:120px!important;max-height:40px!important}
+  .mobile-nav-actions{display:flex!important;align-items:center!important;gap:5px!important;flex:1 1 auto!important;justify-content:flex-end!important;min-width:0!important}
+  .mobile-nav-link{height:35px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;padding:0!important;font:700 7.5px/1 var(--ui)!important;letter-spacing:1px!important;border:1px solid rgba(125,210,235,.34)!important;border-radius:999px!important;color:#e6eef8!important}
+  .mobile-catalogue{width:64px!important}
+  .mobile-contact{width:58px!important}
+  .mobile-passes-link{width:51px!important;background:var(--yellow)!important;border-color:var(--yellow)!important;color:#050814!important}
+  .nav .mobile-only{width:40px!important;height:40px!important;min-width:40px!important;flex:0 0 40px!important}
+}
+@media(max-width:390px){
+  .nav{padding-left:15px!important;padding-right:9px!important}
+  .nav .brand{flex-basis:112px!important;max-width:112px!important}
+  .nav .brand-logo,.nav .brand img{width:112px!important;max-width:112px!important}
+  .mobile-nav-actions{gap:4px!important}
+  .mobile-nav-link{font-size:7px!important;letter-spacing:.8px!important}
+  .mobile-catalogue{width:61px!important}.mobile-contact{width:55px!important}.mobile-passes-link{width:48px!important}
+  .nav .mobile-only{width:38px!important;min-width:38px!important;height:38px!important}
+}
+
+/* Catalogue rows: only time + poster + event title + a clearly legible venue. */
+.catalog-event{grid-template-columns:135px 96px minmax(0,1fr) 42px!important;min-height:132px!important;padding:14px 18px!important}
+.catalog-poster{width:96px!important}
+.catalog-index,.catalog-event-main p,.catalog-meta{display:none!important}
+.catalog-event-main h3{font-size:clamp(32px,3.6vw,54px)!important;line-height:.9!important;margin:0 0 16px!important;max-width:900px!important}
+.catalog-venue{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.catalog-venue span{font:700 8px var(--ui);letter-spacing:2px;color:#6c7b96}
+.catalog-venue b{font:800 11px var(--ui);letter-spacing:1.8px;color:#f1f6ff}
+.catalog-time strong{font-size:24px!important}
+.catalog-time span{font-size:10px!important}
+.catalog-arrow{width:38px!important;height:38px!important}
+
+@media(max-width:850px){
+  .catalog-shell{padding-left:13px!important;padding-right:13px!important}
+  .catalog-hero .mega{font-size:clamp(64px,20vw,104px)!important}
+  .catalog-day-head h2{font-size:clamp(40px,11.5vw,63px)!important}
+  .catalog-event{grid-template-columns:67px 65px minmax(0,1fr) 30px!important;gap:10px!important;min-height:112px!important;padding:10px 8px!important}
+  .catalog-poster{width:65px!important}
+  .catalog-time strong{font-size:17px!important;line-height:.95!important}
+  .catalog-time span{font-size:8px!important;letter-spacing:1px!important}
+  .catalog-event-main h3{font-size:clamp(22px,6.4vw,31px)!important;line-height:.94!important;letter-spacing:-.3px!important;margin:0 0 10px!important;max-width:100%!important}
+  .catalog-venue{gap:7px!important;flex-wrap:nowrap!important}
+  .catalog-venue span{font-size:6.5px!important;letter-spacing:1.2px!important;flex:0 0 auto!important}
+  .catalog-venue b{font-size:8.5px!important;letter-spacing:1px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+  .catalog-arrow{width:29px!important;height:29px!important;font-size:12px!important}
+}
+@media(max-width:390px){
+  .catalog-event{grid-template-columns:62px 58px minmax(0,1fr) 28px!important;gap:7px!important}
+  .catalog-poster{width:58px!important}
+  .catalog-event-main h3{font-size:21px!important;line-height:.95!important}
+  .catalog-venue b{font-size:8px!important}
+}
