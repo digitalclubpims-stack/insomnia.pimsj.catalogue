@@ -10,7 +10,7 @@ const categories=[
  {slug:'digital',name:'DIGITAL',desc:'AI Prompt Battle, A Day in the Life of MBBS & Design Rush.',color:'orange',icon:'monitor'},
  {slug:'clinical',name:'MEDXPLORE CLINICAL',desc:'Cut to Closure Workshop, Materna MiniMed Workshop & Clinexcel Workshop.',color:'pink',icon:'medical'},
  {slug:'social',name:'SOCIAL',desc:'Sansad Unfiltered, Recraft and Repurpose, Canvas for a Change & Pixels and Pain.',color:'yellow',icon:'heart'},
- {slug:'fandom',name:'FANDOM',desc:'Murder Mystery & PIMS Roadies.',color:'cyan',icon:'film'},
+ {slug:'fandom-syndicate',name:'FANDOM SYNDICATE',desc:'Murder Mystery & PIMS Roadies.',color:'cyan',icon:'film'},
  {slug:'e-sports',name:'ESPORTS',desc:'Clash Royale & BGMI.',color:'orange',icon:'game'},
  {slug:'photography',name:'PHOTOGRAPHY',desc:'Unposed Challenge, Behind the Scenes Photography & Bloom Flower Bouquet.',color:'cream',icon:'camera'}
 ];
@@ -19,10 +19,10 @@ const eventData={
  literary:[['LITERARY LEAGUE','A literary showdown built around wit, language, ideas and fast thinking.'],['PIMS VILLA','Step into the villa, meet the characters and play your way through the chaos.'],['MEDICAL MEDMASTER','Put your medical knowledge, recall and clinical thinking to the test.'],['CINEMA CLASH','A celebration of cinema, scenes, characters and the moments every movie lover remembers.'],['MBBS THROUGH AGES','Travel through the eras of MBBS in a creative journey through medicine and student life.']],
  cultural:[['SINGING COMPETITION','Take the mic, own the moment and bring your voice to the Insomnia stage.'],['DANCE COMPETITION','Bring your rhythm, energy and signature moves to the dance floor.'],['MBBS THROUGH AGES','Travel through the eras of MBBS in a creative journey through medicine and student life.'],['BHANGRA','Bring the energy, rhythm and spirit of Bhangra to the Insomnia stage.']],
  arts:[['INKVERSE','Turn ideas into visual expression through ink, line and imagination.'],['FLAVOUR WITHOUT FIRE','Create something delicious and creative without conventional cooking.'],['T-VOLUTION','Transform, create and compete in a hands-on art challenge.'],['RANGOLI COMPETITION','Turn colour, pattern and precision into a visual masterpiece.']],
- digital:[['AI PROMPT BATTLE','Craft precise prompts, think creatively and see how far your imagination can take AI.'],['A DAY IN THE LIFE OF MBBS','Capture the chaos, humour and reality of a day in medical student life.'],['DESIGN RUSH','Turn your digital canvas into a bold visual idea and make your creativity do the talking.']],
+ digital:[['AI PROMPT BATTLE','Craft precise prompts, think creatively and see how far your imagination can take AI.'],['A DAY IN THE LIFE OF MBBS','Capture the chaos, humour and reality of a day in medical student life.'],['DESIGN RUSH','Design a creative, aesthetic MBBS subject cover that captures its essence — relatable, clever and visually striking.']],
  clinical:[['CUT TO CLOSURE WORKSHOP','A practical suturing workshop focused on technique, precision and confidence.'],['MATERNA – MINIMED WORKSHOP','Hands-on learning around maternal and paediatric clinical skills.'],['CLINEXCEL','Build essential clinical skills through practical, focused training.']],
  social:[['SANSAD UNFILTERED','Step into the house, debate policy and represent a constituency in a fast-paced parliamentary simulation.'],['RECRAFT AND REPURPOSE','Turn discarded materials into something creative, useful and worth displaying.'],['CANVAS FOR A CHANGE','Use art as a medium for expression, awareness and positive social impact.'],['PIXELS AND PAIN','Explore the impact of cyberbullying through awareness, expression and conversation.']],
- fandom:[['MURDER MYSTERY','Follow the clues, interrogate the suspects and crack the case before the killer gets away.'],['PIMS ROADIES','A high-energy challenge of personality, teamwork, grit and unexpected tasks.']],
+ 'fandom-syndicate':[['MURDER MYSTERY','Follow the clues, interrogate the suspects and crack the case before the killer gets away.'],['PIMS ROADIES','A high-energy challenge of personality, teamwork, grit and unexpected tasks.']],
  'e-sports':[['CLASH ROYALE','Compete head-to-head, build your strategy and outplay the competition.'],['BGMI','Squad up, survive the battlefield and fight your way to the top.']],
  photography:[['UNPOSED CHALLENGE','Capture authentic moments, expressions and stories without staged poses.'],['BEHIND THE SCENES PHOTOGRAPHY','Find the moments that happen away from the spotlight and turn them into a story.'],['BLOOM FLOWER BOUQUET','Create a visually striking floral arrangement through composition, colour and creativity.']]
 };
@@ -227,9 +227,9 @@ const EVENT_DETAILS={
 function eventSlug(title){return slugifyEvent(title)}
 function eventPosterPath(title){return `assets/posters/${posterOverrides[title]||slugifyEvent(title)+'.jpg'}`}
 function eventShareText(title,d){
-  const websiteUrl=new URL('index.html',location.href).href;
+  const websiteUrl='https://insomnia.pimsj.com';
   const registration=d.registration&&d.registration!=='#'?d.registration:'Registration details on the event page';
-  return `🌙 INSOMNIA 2026\n\n⚡ ${title}\n\n📅 ${d.date}\n⏰ ${d.time}\n📍 ${d.venue}\n👥 ${d.teamSize}\n\n🔥 Think you can take this one? Step into the night and make your mark.\n\n🎟️ Register: ${registration}\n🌐 Explore INSOMNIA: ${websiteUrl}\n\nSTAY AWAKE. DREAM BEYOND. ✦`;
+  return `🌙 INSOMNIA 2026\n\n⚡ ${title}\n\n📅 ${d.date}\n⏰ ${d.time}\n📍 ${d.venue}\n👥 ${d.teamSize}\n\n🔥 Think you can take this one? Step into the night and make your mark.\n\n🎟️ Register: ${registration}\n\n🌐 Explore INSOMNIA: ${websiteUrl}\n\nSTAY AWAKE. DREAM BEYOND. ✦`;
 }
 async function shareEvent(title,d){
   const posterUrl=new URL(eventPosterPath(title),location.href).href;
@@ -392,5 +392,28 @@ function renderEventCatalog(){
   }).join('');
   grid.innerHTML=dayMarkup;
 }
-function init(){setupNav();renderCategories();renderEventCatalog();setupPass();setupExternalLinks();setupDeveloperInstagram();setupPassCopy();setupSpotlightCarousel();setupSpotlightZoom();setupAnimations();setupParallax();setupCinematicMotion();if($('#eventGrid'))renderEventsPage()}
+function setupPageTransitions(){
+  const overlay=$('#pageTransition');
+  if(!overlay)return;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>overlay.classList.add('is-ready')));
+  const shouldHandle=(a)=>{
+    if(!a||a.target==='_blank'||a.hasAttribute('download')||a.dataset.noTransition!==undefined)return false;
+    const href=a.getAttribute('href');
+    if(!href||href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:')||href.startsWith('javascript:'))return false;
+    try{const u=new URL(href,location.href);return u.origin===location.origin && u.pathname!==location.pathname || (u.origin===location.origin && u.pathname===location.pathname && u.search!==location.search)}catch(_){return false}
+  };
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a');
+    if(!shouldHandle(a))return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+    e.preventDefault();
+    const href=a.href;
+    overlay.classList.remove('is-ready');
+    overlay.classList.add('is-leaving');
+    setTimeout(()=>{location.href=href},260);
+  },true);
+  addEventListener('pageshow',()=>{overlay.classList.remove('is-leaving');overlay.classList.add('is-ready')});
+}
+
+function init(){setupPageTransitions();setupNav();renderCategories();renderEventCatalog();setupPass();setupExternalLinks();setupDeveloperInstagram();setupPassCopy();setupSpotlightCarousel();setupSpotlightZoom();setupAnimations();setupParallax();setupCinematicMotion();if($('#eventGrid'))renderEventsPage()}
 document.addEventListener('DOMContentLoaded',init);
