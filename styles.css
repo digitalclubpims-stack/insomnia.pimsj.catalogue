@@ -1,0 +1,2860 @@
+:root{--bg:#030716;--bg2:#050a1c;--ink:#f2f6ff;--muted:#9ba8c2;--line:rgba(230,240,255,.15);--yellow:#ffbd18;--cyan:#16c1d2;--pink:#ff6974;--purple:#a993ff;--orange:#ff8a4c;--cream:#f0eadb;--black:#050814;--display:'Oswald',sans-serif;--ui:'Lexend',sans-serif;--body:'Nunito',sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);overflow-x:hidden}a{text-decoration:none;color:inherit}button,input{font:inherit}.grain{position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}.nav{height:72px;position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:9999!important;display:flex;align-items:center;justify-content:space-between;padding:7px clamp(16px,3vw,42px);border-bottom:1px solid rgba(255,255,255,.13);background:rgba(2,6,20,.82);backdrop-filter:blur(18px) saturate(125%);-webkit-backdrop-filter:blur(18px) saturate(125%);transition:background .35s ease,height .35s ease,box-shadow .35s ease;isolation:isolate;overflow:hidden}.nav.scrolled{background:rgba(2,6,20,.96);height:64px;box-shadow:0 8px 30px rgba(0,0,0,.28)}.brand{display:flex;align-items:center;justify-content:flex-start;width:auto;height:56px;min-width:0;flex:0 0 auto;position:relative;z-index:2;overflow:hidden}.brand img,.brand-logo{display:block;width:170px!important;height:54px!important;max-width:170px!important;max-height:54px!important;object-fit:contain!important;object-position:left center!important;margin:0!important;padding:0!important;flex:none}.desktop-nav{display:flex;align-items:center;justify-content:flex-end;gap:27px;font:600 10px var(--ui);text-transform:uppercase;letter-spacing:1.7px;position:relative;z-index:3}.desktop-nav>a{transition:.25s}.desktop-nav>a:hover{color:var(--yellow)}.nav-pass,.gold-btn{background:var(--yellow);color:#050814!important;border-radius:999px}.nav-pass{padding:12px 20px}.menu-trigger{width:43px;height:43px;border-radius:50%;border:1px solid var(--line);background:rgba(3,7,22,.72);display:grid;place-content:center;gap:4px;cursor:pointer;flex:0 0 auto}.menu-trigger span{display:block;width:17px;height:1.5px;background:var(--ink);transition:.3s}.mobile-only{display:none}.hero{height:100svh;min-height:700px;position:relative;overflow:hidden;background:#020512}.hero-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.05) 52%,rgba(1,4,14,.82) 100%)}.hero-copy{position:absolute;left:6vw;bottom:9vh;z-index:2}.hero-kicker,.eyebrow{font:700 10px var(--ui);letter-spacing:4px;text-transform:uppercase;color:#62d4df}.hero-copy h1{font:700 clamp(58px,8vw,125px) var(--display);line-height:.84;margin:12px 0 25px;letter-spacing:-1px;text-transform:uppercase}.hero-copy h1 em{font-style:normal;color:var(--yellow)}.gold-btn,.dark-btn,.text-link{display:inline-flex;align-items:center;gap:14px}.gold-btn{padding:13px 20px;font:700 10px var(--ui);letter-spacing:1.4px}.gold-btn span,.text-link span{font-size:16px}.hero-edge{position:absolute;z-index:3;right:17px;bottom:22px;writing-mode:vertical-rl;font:700 7px var(--ui);letter-spacing:2.5px;color:#b6c2d6}.hero-edge b{color:var(--yellow);font-size:15px;margin-top:8px}.ticker{height:52px;overflow:hidden;border-block:1px solid var(--line);background:#050a19;display:flex;align-items:center}.ticker-track{display:flex;align-items:center;gap:25px;white-space:nowrap;font:700 9px var(--ui);letter-spacing:2px;animation:marquee 24s linear infinite}.ticker i{font-style:normal;color:var(--yellow)}@keyframes marquee{to{transform:translateX(-50%)}}.scene{position:relative;overflow:hidden}.world{height:105vh;min-height:760px;background:#020715}.world-bg,.world-stars,.world-clouds,.world-city,.closing-bg{position:absolute;inset:-8%;background-position:center;background-size:cover;background-repeat:no-repeat;will-change:transform}.world-bg{background-image:url('assets/images/cosmic-background.png');filter:saturate(.9) brightness(.72)}.world-stars{background-image:radial-gradient(circle at 25% 28%,#fff 0 1px,transparent 1.8px),radial-gradient(circle at 76% 20%,#fff 0 1px,transparent 1.8px),radial-gradient(circle at 60% 60%,rgba(255,188,24,.9) 0 1px,transparent 1.7px);background-size:310px 260px,370px 320px,430px 390px;opacity:.55}.world-clouds{background-image:url('assets/images/cosmic-background.png');background-position:center bottom;filter:blur(1px) brightness(.85);opacity:.8}.world-city{background-image:url('assets/images/cosmic-background.png');background-position:center bottom;filter:brightness(.95);opacity:.72}.world:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 0 28%,rgba(3,7,22,.34) 65%,rgba(3,7,22,.7) 100%)}.world-copy{position:relative;z-index:3;height:100%;display:grid;place-content:center;text-align:center;max-width:980px;margin:auto;padding:100px 25px 140px}.display{font:700 clamp(65px,10vw,145px)/.79 var(--display);letter-spacing:-2px;margin:18px 0;text-transform:uppercase}.display span{color:var(--cyan)}.lead{max-width:630px;margin:22px auto 27px;color:#aab5c9;font-size:15px;line-height:1.65}.text-link{color:var(--yellow);font:700 10px var(--ui);letter-spacing:2px;border-bottom:1px solid rgba(255,189,24,.6);padding-bottom:9px}.section{padding:120px 5vw}.events-preview{background:linear-gradient(180deg,#030716,#050a1c)}.section-head{max-width:1280px;margin:0 auto 55px;display:flex;align-items:flex-end;gap:18px}.section-no,.simple-number{font:400 clamp(55px,8vw,100px)/.8 var(--display);color:rgba(255,255,255,.09)}.section-head h2{font:700 clamp(70px,9vw,125px)/.75 var(--display);margin:7px 0 0;letter-spacing:-1px}.category-grid{max-width:1280px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.category-card{position:relative;min-height:260px;padding:25px 26px 24px;border:2px solid #050814;color:#050814;box-shadow:12px 13px 0 #02030a;overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s}.category-card.yellow{background:var(--yellow)}.category-card.cyan{background:var(--cyan)}.category-card.pink{background:var(--pink)}.category-card.purple{background:var(--purple)}.category-card.orange{background:var(--orange)}.category-card.cream{background:var(--cream)}.category-card.tilt-r{transform:rotate(1.2deg)}.category-card.tilt-l{transform:rotate(-1.2deg)}.category-card:hover{transform:translateY(-10px) rotate(0)!important;box-shadow:17px 19px 0 #02030a}.card-top{display:flex;justify-content:space-between;align-items:center}.category-icon{width:58px;height:58px;border:2px solid currentColor;background:rgba(255,255,255,.65);box-shadow:5px 6px 0 #050814;display:grid;place-items:center;flex:none}.category-icon svg{width:29px;height:29px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.count{background:#050814;color:#fff;padding:9px 12px;font:700 8px var(--ui);letter-spacing:1.5px}.category-card h3{font:700 clamp(43px,5vw,67px)/.82 var(--display);margin:36px 0 13px;letter-spacing:.2px}.category-card p{font:600 13px/1.55 var(--body);max-width:88%;margin:0}.card-arrow{position:absolute;right:26px;bottom:24px;font:700 10px var(--ui);letter-spacing:1.2px}.card-arrow b{font-size:17px}.card-glow{position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.16);filter:blur(45px);right:-90px;bottom:-100px;transition:.5s}.category-card:hover .card-glow{transform:scale(1.6)}.section-link{display:flex;width:max-content;margin:42px auto 0}.spotlight{background:#040819}.spotlight-feature{max-width:1280px;margin:auto;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:rgba(6,11,29,.72);min-height:420px;overflow:hidden}.spotlight-poster{display:grid;place-content:center;text-align:center;font:700 clamp(55px,7vw,95px)/.8 var(--display);color:rgba(150,170,200,.25);border-right:1px solid var(--line);position:relative}.spotlight-poster:before{content:"";position:absolute;inset:12%;background:radial-gradient(circle,rgba(25,193,210,.12),transparent 65%);filter:blur(20px)}.spotlight-poster div{font:700 8px var(--ui);letter-spacing:2px;margin-top:35px;color:rgba(220,230,245,.35)}.spotlight-copy{padding:52px}.gold{color:var(--yellow)}.spotlight-copy h3{font:700 clamp(65px,8vw,120px)/.73 var(--display);margin:20px 0}.spotlight-copy p{color:var(--muted);max-width:420px;line-height:1.6}.night-grid{max-width:1280px;margin:18px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.night-card{min-height:175px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(16,27,61,.72),rgba(4,8,23,.95));padding:18px;display:flex;flex-direction:column;justify-content:space-between;transition:.35s}.night-card:hover{transform:translateY(-8px);border-color:rgba(255,189,24,.5)}.night-card span{font:400 60px/.8 var(--display);color:#243250}.night-card strong{font:700 12px var(--ui);letter-spacing:2px}.night-card small{font:700 9px var(--ui);letter-spacing:2px;color:var(--yellow)}.closing{min-height:62vh;display:grid;place-items:center;background:#020614}.closing-bg{background-image:url('assets/images/cosmic-background.png');filter:brightness(.72);opacity:.75}.closing:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,7,22,.5),rgba(3,7,22,.86))}.closing-inner{position:relative;z-index:2;text-align:center}.closing-inner img{width:min(390px,60vw);max-height:150px;object-fit:contain;mix-blend-mode:screen}.closing-inner p{font:700 9px var(--ui);letter-spacing:3.5px;color:#5ed2df;margin:17px 0 23px}.button-row{display:flex;justify-content:center;gap:10px}.dark-btn{padding:12px 20px;border:1px solid var(--line);border-radius:999px;font:700 10px var(--ui);letter-spacing:1.2px}.footer{background:#02040d;border-top:1px solid var(--line);padding:70px 5vw 25px;display:grid;grid-template-columns:1fr .65fr 1.1fr;gap:55px}.footer-logo{width:190px;mix-blend-mode:screen}.footer p{color:var(--muted);font-size:13px;line-height:1.6}.footer-links{display:flex;flex-direction:column;gap:13px;font:600 11px var(--ui)}.footer-links a:hover{color:var(--yellow)}.footer-signup h3{font:700 46px/.82 var(--display);margin:10px 0}.footer-signup form{display:flex;max-width:440px;border:1px solid var(--line);border-radius:999px;overflow:hidden;margin-top:20px}.footer-signup input{flex:1;min-width:0;background:transparent;color:#fff;border:0;outline:0;padding:14px 18px}.footer-signup button{width:58px;border:0;background:var(--yellow);color:#050814;font-size:20px}.footer-bottom{grid-column:1/-1;border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;gap:20px;color:#6f7c94;font:500 9px var(--ui)}.menu-overlay{position:fixed;inset:0;z-index:900;background:rgba(2,5,16,.985);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.45s}.menu-overlay.open{opacity:1;visibility:visible}.menu-close{position:absolute;right:4vw;top:18px;border:1px solid var(--line);background:transparent;color:#fff;border-radius:50%;width:45px;height:45px;font-size:28px;cursor:pointer}.menu-inner{width:min(1100px,88vw);display:flex;flex-direction:column}.menu-inner>a{font:700 clamp(43px,7vw,95px)/.84 var(--display);border-bottom:1px solid var(--line);padding:16px 0;display:flex;justify-content:space-between;transition:.3s}.menu-inner>a:hover{color:var(--yellow);padding-left:15px}
+/* EVENTS */.events-page{background:#030716}.events-shell{min-height:100vh;padding:140px 4vw 110px;background:linear-gradient(180deg,rgba(3,7,22,.72),rgba(3,7,22,.96)),url('assets/images/cosmic-background.png') center/cover fixed}.events-hero{text-align:center;max-width:900px;margin:auto}.mega{font:700 clamp(92px,14vw,190px)/.72 var(--display);letter-spacing:-2px;margin:20px 0;text-transform:uppercase}.events-hero p{max-width:680px;margin:auto;color:var(--muted);line-height:1.65;font-size:14px}.category-tabs{max-width:1280px;margin:55px auto 48px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.category-tab{border:1px solid rgba(230,240,255,.2);background:rgba(2,7,20,.7);border-radius:999px;padding:13px 18px;font:700 9px var(--ui);letter-spacing:1.4px;transition:.3s;white-space:nowrap}.category-tab:hover,.category-tab.active{background:var(--yellow);color:#050814;border-color:var(--yellow);transform:translateY(-3px)}.event-browser{max-width:1280px;margin:auto}.events-heading{display:flex;align-items:flex-end;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:30px}.heading-with-icon{display:flex;align-items:center;gap:18px}.heading-with-icon .category-icon{width:68px;height:68px}.events-heading h2{font:700 clamp(58px,7vw,100px)/.74 var(--display);margin:8px 0 0;max-width:850px}.events-heading>span{font:700 10px var(--ui);letter-spacing:2.5px;color:var(--cyan);padding-bottom:5px}.event-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.event-card{background:var(--yellow);color:#050814;border:3px solid #02030a;padding:14px;box-shadow:12px 13px 0 #02030a;display:grid;grid-template-columns:38% 1fr;gap:18px;transform:rotate(1.15deg);transition:transform .45s,box-shadow .45s;position:relative;overflow:hidden}.event-card:nth-child(6n+2){background:var(--cyan)}.event-card:nth-child(6n+3){background:var(--pink)}.event-card:nth-child(6n+4){background:var(--purple)}.event-card:nth-child(6n+5){background:var(--cream)}.event-card:nth-child(6n){background:var(--orange)}.event-card:nth-child(even){transform:rotate(-1.15deg)}.event-card:hover{transform:translateY(-10px) rotate(0)!important;box-shadow:18px 20px 0 #02030a}.poster-box{width:100%;aspect-ratio:3/4;border:2px solid #050814;background:#07101e;display:grid;place-items:center;text-align:center;overflow:hidden;position:relative}.poster-box:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.05),transparent 50%)}.poster-word{position:relative;z-index:1;color:rgba(235,244,255,.23);font:700 clamp(35px,4vw,65px)/.78 var(--display)}.poster-word small{display:block;font:700 8px var(--ui);letter-spacing:2px;margin-top:25px;color:rgba(235,244,255,.35)}.event-info{display:flex;flex-direction:column;min-width:0;padding:5px 4px 4px}.event-label{font:700 8px var(--ui);letter-spacing:2px;opacity:.55}.event-info h3{font:700 clamp(37px,4.4vw,62px)/.78 var(--display);margin:12px 0 14px;overflow-wrap:anywhere}.event-info p{font:500 14px/1.55 var(--body);margin:0;max-width:500px}.event-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:18px 0}.event-meta span{height:1px;background:rgba(5,8,20,.25)}.register-btn{margin-top:auto;border:0;background:#050814;color:#f6f8ff;padding:14px;font:700 9px var(--ui);letter-spacing:2px;opacity:.85}.register-btn:disabled{cursor:default}
+/* SIMPLE */.simple-page{min-height:100vh;background:linear-gradient(180deg,rgba(3,7,22,.65),rgba(3,7,22,.96)),url('assets/images/cosmic-background.png') center/cover fixed}.simple-main{min-height:100vh;padding:145px 7vw 110px;max-width:1300px;margin:auto;position:relative}.simple-main .mega span{color:var(--yellow)}.pass-panel{margin-top:45px;border:1px solid var(--line);background:rgba(4,9,25,.72);padding:55px;display:grid;grid-template-columns:1.4fr .6fr;gap:45px;align-items:center}.pass-panel h2{font:700 clamp(38px,5vw,68px)/.88 var(--display);margin:15px 0}.pass-panel p{max-width:700px;color:#a9b5ca;line-height:1.75}.pass-mark{text-align:center}.pass-mark img{width:min(240px,100%);filter:drop-shadow(0 20px 35px rgba(22,193,210,.18))}.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:55px}.contact-card{border:1px solid var(--line);background:rgba(5,10,27,.72);padding:28px;min-height:210px;display:flex;flex-direction:column;justify-content:flex-end;transition:.35s}.contact-card:hover{transform:translateY(-8px);border-color:rgba(255,189,24,.55)}.contact-card span{font:700 9px var(--ui);letter-spacing:2px;color:var(--yellow);margin-bottom:auto}.contact-card strong{font:700 26px var(--display);line-height:.9}.contact-card small{font:500 10px var(--ui);color:#71809b;margin-top:12px;line-height:1.5}
+/* REVEAL */.reveal{opacity:0;will-change:transform,opacity}.visible{opacity:1}.contact-main .mega,.pass-panel{transform-origin:left center}
+@media(max-width:850px){.nav{height:64px!important;padding:5px 14px!important}.nav.scrolled{height:60px!important}.brand{height:52px;max-width:175px}.brand img,.brand-logo{width:154px!important;height:48px!important;max-width:154px!important;max-height:48px!important}.desktop-nav{display:none}.desktop-nav{display:none}.mobile-only{display:grid}.hero{min-height:680px}.hero-poster{object-position:center center}.hero-copy{left:24px;right:20px;bottom:8vh}.hero-copy h1{font-size:clamp(53px,15vw,79px)}.hero-kicker{font-size:8px;letter-spacing:2.5px}.hero-edge{right:7px;font-size:6px}.ticker{height:48px}.ticker-track{font-size:8px;gap:18px}.world{height:78vh;min-height:650px}.world-copy{padding:70px 22px 130px}.display{font-size:clamp(59px,16vw,83px)}.lead{font-size:12px}.section{padding:88px 18px}.section-head{gap:12px;margin-bottom:38px}.section-head h2{font-size:clamp(58px,16vw,82px)}.section-no{font-size:52px}.category-grid{grid-template-columns:1fr;gap:17px;padding:0 5px}.category-card{min-height:225px;padding:20px 21px;box-shadow:8px 9px 0 #02030a}.category-card h3{font-size:45px;margin:31px 0 12px}.category-card p{font-size:12px;max-width:90%}.category-icon{width:49px;height:49px}.count{font-size:8px}.card-arrow{right:20px;bottom:18px}.spotlight-feature{grid-template-columns:1fr}.spotlight-poster{min-height:240px;border-right:0;border-bottom:1px solid var(--line);font-size:55px}.spotlight-copy{padding:32px 24px}.spotlight-copy h3{font-size:clamp(62px,17vw,90px)}.night-grid{grid-template-columns:1fr 1fr;gap:9px}.night-card{min-height:145px;padding:15px}.night-card span{font-size:52px}.night-card strong{font-size:9px}.night-card small{font-size:8px}.closing{min-height:45vh}.closing-inner img{width:min(62vw,280px)}.footer{grid-template-columns:1fr;gap:30px;padding:48px 20px 20px}.footer-logo{width:180px}.footer-signup h3{font-size:38px}.footer-bottom{flex-direction:column}.menu-inner>a{font-size:46px}.events-shell{padding:110px 14px 75px}.events-hero .mega{font-size:91px}.events-hero p{font-size:12px;padding:0 8px}.category-tabs{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;margin:35px -14px 32px;padding:4px 14px 12px;scrollbar-width:none}.category-tabs::-webkit-scrollbar{display:none}.category-tab{flex:0 0 auto;font-size:8px;padding:11px 14px}.events-heading{margin-bottom:20px;padding-bottom:16px}.heading-with-icon{gap:11px;min-width:0}.heading-with-icon .category-icon{width:50px;height:50px}.events-heading h2{font-size:clamp(48px,13vw,66px);max-width:235px}.events-heading>span{font-size:8px;white-space:nowrap}.event-grid{grid-template-columns:1fr;gap:19px;padding:0 4px}.event-card,.event-card:nth-child(even){grid-template-columns:31% minmax(0,1fr);gap:12px;padding:10px;transform:rotate(1.15deg)}.event-card:nth-child(3n){transform:rotate(-1.15deg)}.event-card:hover{transform:translateY(-6px) rotate(0)!important}.poster-box{aspect-ratio:3/4}.poster-word{font-size:27px}.poster-word small{font-size:6px;margin-top:16px}.event-info{padding:2px 1px}.event-label{font-size:6.5px}.event-info h3{font-size:clamp(27px,8.2vw,39px);line-height:.8;margin:7px 0 9px}.event-info p{font-size:10.8px;line-height:1.42;overflow-wrap:anywhere}.event-meta{margin:7px 0 9px;gap:5px}.register-btn{padding:10px 5px;font-size:7.5px;min-height:34px}.simple-main{padding:115px 20px 80px}.simple-main .mega{font-size:94px}.pass-panel{grid-template-columns:1fr;padding:30px 23px;gap:30px}.pass-panel h2{font-size:48px}.pass-panel p{font-size:13px}.pass-mark{display:none}.contact-grid{grid-template-columns:1fr;gap:12px}.contact-card{min-height:165px}}
+@media(max-width:390px){.brand-logo{width:153px}.hero-copy h1{font-size:53px}.category-card h3{font-size:42px}.events-hero .mega{font-size:80px}.events-heading h2{font-size:44px}.event-card,.event-card:nth-child(even){grid-template-columns:30% minmax(0,1fr);gap:9px;padding:8px}.event-info h3{font-size:24px}.event-info p{font-size:10px}.simple-main .mega{font-size:80px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{opacity:1!important;transform:none!important}.layer{transform:none!important}}
+
+body{min-width:0}
+.nav .brand img{image-rendering:auto}
+@media(max-width:850px){
+  .nav{box-shadow:0 5px 24px rgba(0,0,0,.24)}
+  .nav .brand{overflow:visible}
+  .nav .menu-trigger{width:42px;height:42px}
+  .hero{padding-top:0}
+}
+
+
+/* =========================================================
+   INSOMNIA V9 — CINEMATIC TYPOGRAPHY + BULLETPROOF NAV
+   ========================================================= */
+:root{
+  --display:'Anton',Impact,sans-serif;
+  --ui:'Space Grotesk',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,sans-serif;
+  --header-h:72px;
+}
+
+/* Never allow the hero artwork to cover the fixed navigation. */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body{font-family:var(--body)}
+.nav{
+  position:fixed !important;
+  inset:0 0 auto 0 !important;
+  height:var(--header-h) !important;
+  width:100% !important;
+  z-index:2147483000 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  padding:8px clamp(18px,4vw,52px) !important;
+  background:rgba(2,6,20,.94) !important;
+  border-bottom:1px solid rgba(125,210,235,.20) !important;
+  box-shadow:0 8px 30px rgba(0,0,0,.24) !important;
+  isolation:isolate !important;
+  transform:none !important;
+  overflow:visible !important;
+}
+.nav *{z-index:1}
+.nav .brand{
+  width:auto !important;
+  height:56px !important;
+  max-width:190px !important;
+  display:flex !important;
+  align-items:center !important;
+  overflow:visible !important;
+}
+.nav .brand-logo,.nav .brand img{
+  display:block !important;
+  width:164px !important;
+  height:auto !important;
+  max-width:164px !important;
+  max-height:50px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+.desktop-nav{font-family:var(--ui) !important}
+.nav-pass{font-family:var(--ui) !important}
+.menu-trigger{position:relative !important;z-index:5 !important}
+
+/* The grain must never visually sit over the navigation. */
+.grain{z-index:1000 !important}
+
+/* Cinematic type hierarchy. */
+.hero-copy h1,
+.display,
+.section-head h2,
+.events-heading h2,
+.category-card h3,
+.event-info h3,
+.spotlight-copy h3,
+.simple-main .mega,
+.mega,
+.footer-signup h3,
+.menu-inner>a{
+  font-family:var(--display) !important;
+  text-transform:uppercase !important;
+  font-weight:400 !important;
+  letter-spacing:.5px !important;
+}
+.eyebrow,.hero-kicker,.desktop-nav,.nav-pass,.text-link,.category-tab,
+.count,.event-label,.register-btn,.night-card strong,.night-card small,
+.footer-links,.footer-bottom,.footer-signup input,.footer-signup button{
+  font-family:var(--ui) !important;
+  text-transform:uppercase !important;
+}
+.hero-copy h1{font-size:clamp(58px,8vw,126px);line-height:.86}
+.display{font-size:clamp(66px,10vw,148px);line-height:.82}
+.lead,.category-card p,.event-info p,.footer p,.pass-panel p,.events-hero p,
+.contact-card small{font-family:var(--body) !important}
+
+/* Tighter vertical rhythm: sections join instead of creating dead gaps. */
+.home-page main{display:block}
+.world{min-height:720px}
+.events-preview.section{padding-top:96px;padding-bottom:105px}
+.spotlight.section{padding-top:100px;padding-bottom:95px}
+.closing{min-height:54vh}
+.footer{padding-top:58px}
+
+/* Stronger scroll choreography without changing the poster itself. */
+.scene,.section{will-change:transform}
+.category-card,.event-card,.night-card,.spotlight-feature,.section-head{
+  will-change:transform,opacity;
+}
+
+/* Footer is a real stacked mobile layout, never a clipped desktop grid. */
+.footer{
+  grid-template-columns:minmax(0,1fr) minmax(150px,.65fr) minmax(0,1.1fr);
+  min-width:0;
+}
+.footer > div{min-width:0}
+.footer-logo{max-width:100%;height:auto}
+.footer-bottom span{min-width:0;overflow-wrap:anywhere}
+
+/* Mobile: centered, contained, no overlapping typography. */
+@media (max-width:850px){
+  :root{--header-h:64px}
+  body{padding-top:0}
+  .nav{
+    height:64px !important;
+    min-height:64px !important;
+    padding:6px 16px !important;
+  }
+  .nav .brand{
+    height:50px !important;
+    max-width:180px !important;
+  }
+  .nav .brand-logo,.nav .brand img{
+    width:150px !important;
+    max-width:150px !important;
+    max-height:44px !important;
+  }
+  .nav .mobile-only{
+    display:grid !important;
+    place-items:center !important;
+    flex:0 0 42px !important;
+  }
+
+  .hero{
+    min-height:680px !important;
+    height:100svh !important;
+  }
+  .hero-copy{
+    left:24px !important;
+    right:24px !important;
+    bottom:7.5vh !important;
+  }
+  .hero-copy h1{
+    font-size:clamp(53px,14.5vw,78px) !important;
+    line-height:.86 !important;
+  }
+
+  .ticker{height:46px !important}
+  .ticker-track{font-size:8px !important;letter-spacing:1.8px !important}
+
+  .world{
+    height:auto !important;
+    min-height:600px !important;
+  }
+  .world-copy{
+    min-height:600px !important;
+    padding:70px 22px 72px !important;
+    place-content:center !important;
+  }
+  .display{
+    font-size:clamp(52px,14.2vw,76px) !important;
+    line-height:.83 !important;
+    margin:14px 0 18px !important;
+  }
+  .lead{
+    font-size:12px !important;
+    line-height:1.65 !important;
+    max-width:350px !important;
+    margin:16px auto 24px !important;
+  }
+
+  .section{
+    padding:72px 18px !important;
+  }
+  .events-preview.section{
+    padding-top:70px !important;
+    padding-bottom:78px !important;
+  }
+  .spotlight.section{
+    padding-top:72px !important;
+    padding-bottom:70px !important;
+  }
+  .section-head{
+    margin-bottom:30px !important;
+    align-items:flex-end !important;
+  }
+  .section-head h2{
+    font-size:clamp(55px,15vw,78px) !important;
+    line-height:.78 !important;
+  }
+  .section-no{font-size:48px !important}
+
+  /* Category cards: same hand-cut tilt as desktop, but contained. */
+  .category-grid{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+    padding:0 5px !important;
+  }
+  .category-card{
+    width:100% !important;
+    min-height:215px !important;
+    padding:20px 20px 22px !important;
+    overflow:hidden !important;
+  }
+  .category-card h3{
+    font-size:clamp(38px,11.5vw,55px) !important;
+    line-height:.82 !important;
+    margin:29px 0 13px !important;
+    max-width:88% !important;
+    overflow-wrap:normal !important;
+  }
+  .category-card p{
+    font-size:12px !important;
+    line-height:1.48 !important;
+    max-width:82% !important;
+  }
+  .card-arrow{
+    right:18px !important;
+    bottom:17px !important;
+    font-size:9px !important;
+  }
+
+  /* Spotlight: compact and joined to closing. */
+  .spotlight-feature{
+    grid-template-columns:1fr !important;
+    min-height:0 !important;
+  }
+  .spotlight-poster{
+    min-height:220px !important;
+    font-size:52px !important;
+  }
+  .spotlight-copy{
+    padding:28px 22px !important;
+  }
+  .spotlight-copy h3{
+    font-size:clamp(58px,16vw,84px) !important;
+    line-height:.74 !important;
+  }
+  .night-grid{
+    grid-template-columns:1fr 1fr !important;
+    gap:9px !important;
+    margin-top:14px !important;
+  }
+  .night-card{
+    min-height:132px !important;
+    padding:14px !important;
+  }
+  .night-card span{font-size:48px !important}
+  .night-card strong{font-size:9px !important}
+  .night-card small{font-size:8px !important}
+
+  .closing{
+    min-height:42vh !important;
+    padding:65px 20px !important;
+  }
+  .closing-inner img{
+    width:min(62vw,260px) !important;
+    max-height:100px !important;
+  }
+
+  /* Footer: one column, centered, with credits always visible. */
+  .footer{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:30px !important;
+    padding:46px 20px 22px !important;
+    text-align:left !important;
+  }
+  .footer > div:first-child{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+  }
+  .footer-logo{width:165px !important}
+  .footer-links{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+    width:100% !important;
+  }
+  .footer-signup{width:100% !important}
+  .footer-signup h3{
+    font-size:clamp(38px,11vw,52px) !important;
+    line-height:.82 !important;
+  }
+  .footer-signup form{width:100% !important}
+  .footer-bottom{
+    grid-column:1 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:12px !important;
+    text-align:left !important;
+    line-height:1.45 !important;
+    padding-top:18px !important;
+  }
+
+  /* Events mobile: poster and copy are separate columns; copy never sits on poster. */
+  .events-shell{
+    padding:104px 14px 60px !important;
+  }
+  .events-heading h2{
+    font-size:clamp(45px,12.5vw,65px) !important;
+    line-height:.78 !important;
+    max-width:230px !important;
+  }
+  .event-grid{
+    grid-template-columns:1fr !important;
+    gap:21px !important;
+    padding:0 5px !important;
+  }
+  .event-card,.event-card:nth-child(even),.event-card:nth-child(3n){
+    display:grid !important;
+    grid-template-columns:minmax(105px,31%) minmax(0,1fr) !important;
+    align-items:stretch !important;
+    gap:13px !important;
+    padding:10px !important;
+    overflow:hidden !important;
+  }
+  .poster-box{
+    min-width:0 !important;
+    width:100% !important;
+    aspect-ratio:3/4 !important;
+  }
+  .event-info{
+    min-width:0 !important;
+    width:100% !important;
+    overflow:hidden !important;
+    padding:2px 0 !important;
+  }
+  .event-info h3{
+    font-size:clamp(25px,7.6vw,38px) !important;
+    line-height:.82 !important;
+    margin:7px 0 9px !important;
+    max-width:100% !important;
+    overflow-wrap:anywhere !important;
+    word-break:normal !important;
+  }
+  .event-info p{
+    font-size:10.5px !important;
+    line-height:1.42 !important;
+    max-width:100% !important;
+    overflow-wrap:anywhere !important;
+  }
+  .event-meta{margin:8px 0 10px !important}
+  .register-btn{
+    width:100% !important;
+    min-height:35px !important;
+    padding:9px 5px !important;
+  }
+}
+
+@media (max-width:390px){
+  .nav .brand-logo,.nav .brand img{width:140px !important;max-width:140px !important}
+  .hero-copy{left:20px !important;right:20px !important}
+  .hero-copy h1{font-size:51px !important}
+  .category-card h3{font-size:40px !important}
+  .event-card,.event-card:nth-child(even),.event-card:nth-child(3n){
+    grid-template-columns:minmax(98px,30%) minmax(0,1fr) !important;
+    gap:10px !important;
+  }
+  .event-info h3{font-size:23px !important}
+  .event-info p{font-size:9.7px !important}
+}
+
+
+/* =========================================================
+   INSOMNIA V10 FINAL — READABILITY / RHYTHM / CARD SYSTEM
+   ========================================================= */
+
+/* ---- GLOBAL READABILITY ---- */
+:root{
+  --display:'Anton', Impact, sans-serif;
+  --ui:'Space Grotesk', system-ui, sans-serif;
+  --body:'DM Sans', system-ui, sans-serif;
+}
+
+body{font-family:var(--body)!important}
+
+.lead,
+.category-card p,
+.event-info p,
+.footer p,
+.pass-panel p,
+.events-hero p,
+.contact-card small{
+  font-family:var(--body)!important;
+  font-size:clamp(15px,1.25vw,18px)!important;
+  line-height:1.7!important;
+  letter-spacing:.05px;
+}
+
+/* ---- HOME: REMOVE THE LARGE DESKTOP DEAD ZONE ---- */
+@media(min-width:851px){
+  .world{
+    height:72vh!important;
+    min-height:610px!important;
+  }
+  .world-copy{
+    padding:70px 25px 80px!important;
+  }
+  .events-preview.section{
+    padding-top:78px!important;
+    padding-bottom:82px!important;
+  }
+  .spotlight.section{
+    padding-top:82px!important;
+    padding-bottom:78px!important;
+  }
+
+  /* Discovery/category cards: much more readable at desktop width. */
+  .category-card{
+    min-height:300px!important;
+    padding:28px 30px 27px!important;
+  }
+  .category-card h3{
+    font-size:clamp(48px,4.5vw,68px)!important;
+    line-height:.86!important;
+    white-space:nowrap!important;
+    margin:38px 0 17px!important;
+  }
+  .category-card p{
+    font-size:16px!important;
+    line-height:1.58!important;
+    max-width:92%!important;
+  }
+
+  /* Event cards return to the larger V5-style footprint. */
+  .event-grid{
+    gap:34px!important;
+  }
+  .event-card{
+    min-height:455px!important;
+    padding:18px!important;
+    grid-template-columns:37% minmax(0,1fr)!important;
+    gap:22px!important;
+  }
+  .poster-box{
+    height:100%!important;
+    aspect-ratio:auto!important;
+    min-height:415px!important;
+  }
+  .event-info{
+    padding:8px 8px 7px!important;
+  }
+  .event-info h3{
+    font-size:clamp(43px,4vw,62px)!important;
+    line-height:.86!important;
+    margin:14px 0 17px!important;
+  }
+  .event-info p{
+    font-size:16px!important;
+    line-height:1.62!important;
+    max-width:560px!important;
+  }
+  .event-label{
+    font-size:10px!important;
+  }
+  .register-btn{
+    padding:16px!important;
+    font-size:10px!important;
+  }
+
+  /* Pass page: push the title below the fixed navigation. */
+  .simple-main{
+    padding-top:185px!important;
+    padding-bottom:95px!important;
+  }
+  .simple-main .mega{
+    font-size:clamp(115px,12vw,175px)!important;
+    line-height:.75!important;
+    margin-top:16px!important;
+  }
+  .pass-panel{
+    margin-top:52px!important;
+    padding:58px!important;
+    gap:55px!important;
+  }
+  .pass-panel h2{
+    font-size:clamp(48px,4.8vw,72px)!important;
+  }
+  .pass-panel p{
+    font-size:17px!important;
+    line-height:1.8!important;
+    max-width:760px!important;
+  }
+  .pass-mark img{
+    width:min(270px,100%)!important;
+  }
+
+  /* Footer: larger, centered, no newsletter input. */
+  .footer{
+    grid-template-columns:1fr!important;
+    gap:27px!important;
+    padding:72px 5vw 32px!important;
+    text-align:center!important;
+    justify-items:center!important;
+  }
+  .footer>div:first-child{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+  }
+  .footer-logo{width:225px!important}
+  .footer p{
+    font-size:17px!important;
+    margin-top:20px!important;
+  }
+  .footer-links{
+    align-items:center!important;
+    gap:17px!important;
+    font-size:15px!important;
+  }
+  .footer-signup{
+    width:min(760px,100%)!important;
+  }
+  .footer-signup .eyebrow{
+    font-size:12px!important;
+  }
+  .footer-signup h3{
+    font-size:clamp(54px,6vw,82px)!important;
+    line-height:.82!important;
+    margin:14px 0 20px!important;
+  }
+  .footer-signup p{
+    font-size:17px!important;
+    margin:0!important;
+  }
+  .footer-signup form{display:none!important}
+  .footer-bottom{
+    width:100%!important;
+    justify-content:center!important;
+    align-items:center!important;
+    flex-direction:column!important;
+    gap:13px!important;
+    text-align:center!important;
+    font-size:12px!important;
+    line-height:1.6!important;
+  }
+}
+
+/* ---- MOBILE: EQUAL EVENT CARD GEOMETRY ---- */
+@media(max-width:850px){
+  /* Home discovery copy is deliberately readable, not tiny. */
+  .category-card{
+    min-height:235px!important;
+  }
+  .category-card h3{
+    white-space:nowrap!important;
+    font-size:clamp(39px,11vw,54px)!important;
+    line-height:.86!important;
+  }
+  .category-card p{
+    font-size:14px!important;
+    line-height:1.55!important;
+    max-width:92%!important;
+  }
+
+  /* The night section stays compact on mobile; desktop alone gets the big reduction. */
+  .world{min-height:600px!important}
+
+  /* Events page: every event card has exactly the same outer height. */
+  .event-grid{
+    gap:24px!important;
+  }
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){
+    height:310px!important;
+    min-height:310px!important;
+    box-sizing:border-box!important;
+    grid-template-columns:31% minmax(0,1fr)!important;
+    grid-template-rows:1fr!important;
+    align-items:stretch!important;
+    gap:13px!important;
+    padding:11px!important;
+  }
+  .poster-box{
+    height:100%!important;
+    min-height:0!important;
+    aspect-ratio:auto!important;
+  }
+  .event-info{
+    height:100%!important;
+    min-height:0!important;
+    padding:3px 2px!important;
+    overflow:hidden!important;
+  }
+  .event-info h3{
+    font-size:clamp(25px,7.5vw,38px)!important;
+    line-height:1.02!important;
+    margin:8px 0 10px!important;
+    overflow-wrap:normal!important;
+  }
+  .event-info p{
+    font-size:12.5px!important;
+    line-height:1.5!important;
+    max-width:100%!important;
+  }
+  .event-label{
+    font-size:8px!important;
+  }
+  .event-meta{
+    margin:8px 0 10px!important;
+  }
+  .register-btn{
+    min-height:39px!important;
+    padding:10px 5px!important;
+    font-size:8px!important;
+  }
+
+  /* Give multi-word event titles actual breathing room. */
+  .event-info h3 br{line-height:1.12!important}
+
+  /* Pass page: title cannot collide with fixed nav; icon becomes visible. */
+  .simple-main{
+    padding-top:102px!important;
+    padding-left:20px!important;
+    padding-right:20px!important;
+    padding-bottom:70px!important;
+  }
+  .simple-main .mega{
+    font-size:clamp(82px,22vw,108px)!important;
+    line-height:.76!important;
+    margin:12px 0 0!important;
+  }
+  .pass-panel{
+    margin-top:38px!important;
+    padding:27px 22px 34px!important;
+    gap:23px!important;
+  }
+  .pass-panel h2{
+    font-size:clamp(42px,11vw,55px)!important;
+    line-height:.9!important;
+    margin:17px 0 18px!important;
+  }
+  .pass-panel p{
+    font-size:15px!important;
+    line-height:1.72!important;
+    margin-bottom:17px!important;
+  }
+  .pass-mark{
+    display:grid!important;
+    place-items:center!important;
+    order:-1!important;
+    margin:0 auto 3px!important;
+  }
+  .pass-mark img{
+    width:150px!important;
+    max-width:150px!important;
+  }
+
+  /* Mobile footer is fully centered and contains no email field. */
+  .footer{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    padding:52px 20px 25px!important;
+    text-align:center!important;
+    justify-items:center!important;
+  }
+  .footer>div:first-child{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+  }
+  .footer-logo{
+    width:195px!important;
+  }
+  .footer p{
+    font-size:15px!important;
+    line-height:1.55!important;
+    margin:18px 0 0!important;
+  }
+  .footer-links{
+    align-items:center!important;
+    gap:14px!important;
+    font-size:14px!important;
+    line-height:1.3!important;
+  }
+  .footer-signup{
+    width:100%!important;
+  }
+  .footer-signup .eyebrow{
+    font-size:10px!important;
+    letter-spacing:4px!important;
+  }
+  .footer-signup h3{
+    font-size:clamp(44px,12vw,58px)!important;
+    line-height:.82!important;
+    margin:13px 0 17px!important;
+  }
+  .footer-signup p{
+    font-size:14px!important;
+    line-height:1.5!important;
+    margin:0!important;
+  }
+  .footer-signup form{display:none!important}
+  .footer-bottom{
+    grid-column:1!important;
+    width:100%!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    gap:12px!important;
+    text-align:center!important;
+    font-size:11px!important;
+    line-height:1.55!important;
+    padding-top:20px!important;
+  }
+}
+
+/* Very small screens: preserve single-line category names without overflow. */
+@media(max-width:390px){
+  .category-card h3{
+    font-size:37px!important;
+    letter-spacing:0!important;
+  }
+  .category-card p{font-size:13px!important}
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){
+    height:300px!important;
+    min-height:300px!important;
+    grid-template-columns:30% minmax(0,1fr)!important;
+  }
+  .event-info h3{font-size:23px!important;line-height:1.04!important}
+  .event-info p{font-size:11.5px!important}
+  .simple-main .mega{font-size:76px!important}
+}
+
+/* ---- FASTER / MORE NOTICEABLE SCROLL CHOREOGRAPHY ---- */
+@media (prefers-reduced-motion:no-preference){
+  .reveal{will-change:transform,opacity}
+}
+
+/* =========================================================
+   INSOMNIA V11 FINAL — EVENT POSTER CARDS + TYPOGRAPHY + MOTION
+   ========================================================= */
+
+/* Category filters must be immediately legible on desktop. */
+.category-tabs{gap:14px!important}
+.category-tab{
+  font-size:12px!important;
+  letter-spacing:1.7px!important;
+  padding:15px 22px!important;
+  min-height:48px!important;
+}
+.events-hero p{
+  font-size:17px!important;
+  line-height:1.72!important;
+  max-width:820px!important;
+}
+
+/* Poster-card system: fixed geometry, 3:4 poster, full event information. */
+.event-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:38px!important}
+.event-card,
+.event-card:nth-child(even),
+.event-card:nth-child(3n){
+  height:520px!important;
+  min-height:520px!important;
+  max-height:520px!important;
+  grid-template-columns:36% minmax(0,1fr)!important;
+  gap:24px!important;
+  padding:18px!important;
+  overflow:hidden!important;
+}
+.poster-box{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:3/4!important;
+  align-self:start!important;
+}
+.event-info{
+  min-width:0!important;
+  height:100%!important;
+  padding:7px 4px 4px!important;
+  overflow:hidden!important;
+}
+.event-label{font-size:11px!important;letter-spacing:3px!important}
+.event-info h3{
+  font-size:clamp(42px,4.1vw,62px)!important;
+  line-height:.92!important;
+  letter-spacing:.4px!important;
+  margin:15px 0 18px!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+.event-info p{
+  font-size:17px!important;
+  line-height:1.58!important;
+  max-width:100%!important;
+}
+.event-meta-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:11px 20px!important;
+  margin:20px 0 16px!important;
+}
+.event-meta-grid>div{
+  min-width:0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:4px!important;
+  border-top:1px solid rgba(5,8,20,.25)!important;
+  padding-top:8px!important;
+}
+.event-meta-grid b{
+  font:700 9px/1 var(--ui)!important;
+  letter-spacing:2px!important;
+  opacity:.56!important;
+}
+.event-meta-grid span{
+  font:700 12px/1.25 var(--ui)!important;
+  overflow-wrap:anywhere!important;
+}
+.register-btn{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:12px!important;
+  width:100%!important;
+  min-height:52px!important;
+  margin-top:auto!important;
+  padding:14px 18px!important;
+  font-size:11px!important;
+  letter-spacing:2.5px!important;
+  opacity:1!important;
+  cursor:pointer!important;
+}
+.register-btn span{font-size:17px!important}
+.register-btn.is-disabled{opacity:.86!important}
+
+/* The title is allowed to stay on one line when the category itself is long. */
+.events-heading h2{max-width:none!important;white-space:nowrap!important}
+.events-heading>span{font-size:11px!important;letter-spacing:3px!important}
+
+/* Main spotlight title: no accidental character collision. */
+.spotlight-copy h3{
+  line-height:.86!important;
+  letter-spacing:.2px!important;
+}
+
+/* Footer/other copy stays readable without becoming visually heavy. */
+.footer p,.footer-signup p{font-size:17px!important;line-height:1.6!important}
+
+@media (min-width:851px){
+  .event-card:hover{transform:translateY(-8px) rotate(0)!important;box-shadow:18px 20px 0 #02030a!important}
+  .events-heading{margin-bottom:36px!important}
+}
+
+@media (max-width:850px){
+  .events-hero p{font-size:14.5px!important;line-height:1.65!important}
+  .category-tabs{gap:9px!important;margin-top:34px!important;margin-bottom:38px!important}
+  .category-tab{
+    font-size:10.5px!important;
+    letter-spacing:1.45px!important;
+    padding:13px 17px!important;
+    min-height:43px!important;
+  }
+  .events-heading{align-items:flex-end!important;margin-bottom:28px!important;padding-bottom:18px!important}
+  .heading-with-icon{gap:12px!important}
+  .heading-with-icon .category-icon{width:58px!important;height:58px!important}
+  .events-heading h2{
+    font-size:clamp(35px,9.8vw,58px)!important;
+    line-height:.88!important;
+    white-space:nowrap!important;
+    max-width:none!important;
+  }
+  .events-heading>span{font-size:9px!important;letter-spacing:2.2px!important}
+
+  .event-grid{grid-template-columns:1fr!important;gap:30px!important;padding:0 4px!important}
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){
+    height:540px!important;
+    min-height:540px!important;
+    max-height:540px!important;
+    grid-template-columns:minmax(150px,35%) minmax(0,1fr)!important;
+    gap:16px!important;
+    padding:13px!important;
+  }
+  .poster-box{aspect-ratio:3/4!important;height:auto!important;align-self:start!important}
+  .event-info{padding:4px 1px 3px!important}
+  .event-label{font-size:8px!important;letter-spacing:2.4px!important}
+  .event-info h3{
+    font-size:clamp(29px,8vw,44px)!important;
+    line-height:1.02!important;
+    margin:9px 0 12px!important;
+    letter-spacing:.25px!important;
+    overflow-wrap:normal!important;
+  }
+  .event-info p{font-size:14px!important;line-height:1.48!important}
+  .event-meta-grid{gap:9px 13px!important;margin:17px 0 13px!important}
+  .event-meta-grid>div{gap:3px!important;padding-top:7px!important}
+  .event-meta-grid b{font-size:7px!important;letter-spacing:1.5px!important}
+  .event-meta-grid span{font-size:10px!important;line-height:1.25!important}
+  .register-btn{min-height:47px!important;font-size:9px!important;letter-spacing:2px!important}
+  .register-btn span{font-size:15px!important}
+
+  /* Prevent MR & MISS INSOMNIA from being clipped by the old max-width. */
+  .events-heading .heading-with-icon>div{min-width:0!important}
+  .events-heading h2{overflow:visible!important}
+
+  .spotlight-copy h3{line-height:.9!important;letter-spacing:.1px!important}
+  .footer p,.footer-signup p{font-size:15px!important;line-height:1.55!important}
+}
+
+@media (max-width:390px){
+  .events-heading h2{font-size:33px!important}
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){
+    height:525px!important;
+    min-height:525px!important;
+    max-height:525px!important;
+    grid-template-columns:minmax(132px,34%) minmax(0,1fr)!important;
+    gap:12px!important;
+    padding:11px!important;
+  }
+  .event-info h3{font-size:27px!important;line-height:1.02!important}
+  .event-info p{font-size:12.5px!important}
+  .event-meta-grid{gap:8px 9px!important}
+  .event-meta-grid b{font-size:6.5px!important}
+  .event-meta-grid span{font-size:9px!important}
+  .register-btn{min-height:43px!important;font-size:8px!important}
+}
+
+/* Final collision guards. */
+.spotlight-copy h3{line-height:.92!important}
+.section-link{position:relative!important;z-index:4!important;clear:both!important;margin-top:52px!important}
+.category-grid{margin-bottom:0!important}
+@media(max-width:850px){
+  .spotlight-copy h3{line-height:.93!important}
+  .section-link{margin-top:44px!important;padding-top:2px!important}
+}
+
+/* =========================================================
+   INSOMNIA V11.1 — FINAL POLISH
+   User-requested geometry/navigation fixes only.
+   ========================================================= */
+
+/* Mobile navigation: GET PASSES sits between the logo and hamburger. */
+.mobile-nav-actions{display:none;align-items:center;gap:9px;flex:0 0 auto}
+.mobile-pass{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border-radius:999px;background:var(--yellow);color:#050814!important;font:700 9px var(--ui);letter-spacing:1.5px;white-space:nowrap}
+@media(max-width:850px){
+  .nav{gap:8px!important}
+  .mobile-nav-actions{display:flex!important}
+  .nav .mobile-only{display:grid!important;flex:0 0 42px!important}
+}
+
+/* Desktop/landscape hero: keep the full INSOMNIA wordmark visible instead of cropping its lower half. */
+@media(min-width:851px){
+  .hero-poster{object-position:center 27%!important}
+}
+
+/* Event cards: portrait poster-first layout, fixed equal height on every card. */
+.event-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:38px!important;align-items:start!important}
+.event-card,
+.event-card:nth-child(even),
+.event-card:nth-child(3n){
+  height:1000px!important;
+  min-height:1000px!important;
+  max-height:1000px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  gap:0!important;
+  padding:18px!important;
+  overflow:hidden!important;
+  transform:rotate(1.15deg)!important;
+}
+.event-card:nth-child(even){transform:rotate(-1.15deg)!important}
+.event-card:nth-child(3n){transform:rotate(1.15deg)!important}
+.event-card:nth-child(even):hover,.event-card:nth-child(3n):hover,.event-card:hover{transform:translateY(-8px) rotate(0)!important;box-shadow:18px 20px 0 #02030a!important}
+
+/* 3:4 poster slot, deliberately limited to the upper part of the card. */
+.poster-box{
+  width:min(68%,460px)!important;
+  aspect-ratio:3/4!important;
+  height:auto!important;
+  min-height:0!important;
+  margin:0 auto 18px!important;
+  flex:0 0 auto!important;
+}
+.poster-box img{width:100%;height:100%;object-fit:cover;display:block}
+.poster-word{font-size:clamp(38px,4.5vw,64px)!important;line-height:.82!important}
+
+.event-info{width:100%!important;height:auto!important;min-height:0!important;padding:0 10px 8px!important;overflow:visible!important;display:flex!important;flex-direction:column!important;flex:1 1 auto!important;text-align:center!important}
+.event-label{font-size:11px!important;letter-spacing:3px!important}
+.event-info h3{
+  font-size:clamp(42px,4.1vw,60px)!important;
+  line-height:1.02!important;
+  letter-spacing:.35px!important;
+  margin:9px 0 14px!important;
+  white-space:normal!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  text-align:center!important;
+  text-wrap:balance;
+}
+.event-info p{
+  font-size:17px!important;
+  line-height:1.5!important;
+  max-width:850px!important;
+  margin:0 auto!important;
+  text-align:center!important;
+}
+.event-meta-grid{
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:9px 22px!important;
+  margin:20px auto 15px!important;
+  text-align:left!important;
+}
+.event-meta-grid>div{padding-top:8px!important;border-top:1px solid rgba(5,8,20,.25)!important;min-width:0!important}
+.event-meta-grid b{font-size:9px!important;letter-spacing:2px!important}
+.event-meta-grid span{font-size:12px!important;line-height:1.3!important}
+.register-btn{width:100%!important;min-height:52px!important;margin-top:auto!important;flex:0 0 auto!important}
+
+/* Category filters stay large and readable on desktop. */
+@media(min-width:851px){
+  .category-tab{font-size:12px!important;padding:15px 22px!important;min-height:48px!important}
+}
+
+/* Closing block: show the official INSOMNIA header logo above the tagline. */
+.closing-inner img.closing-logo{
+  display:block!important;
+  width:min(360px,58vw)!important;
+  height:auto!important;
+  max-height:120px!important;
+  object-fit:contain!important;
+  margin:0 auto 22px!important;
+  mix-blend-mode:screen!important;
+}
+.closing-inner p{font-size:11px!important;letter-spacing:3.5px!important;margin:0 0 25px!important}
+.button-row{display:flex!important;justify-content:center!important;align-items:center!important;gap:12px!important;flex-wrap:wrap!important}
+
+/* Footer credit area: no duplicate logo; retain centered readable credit text. */
+.footer>div:first-child{display:flex!important;flex-direction:column!important;align-items:center!important}
+.footer>div:first-child .footer-logo{display:none!important}
+.footer>div:first-child p{margin-top:0!important}
+
+@media(max-width:850px){
+  /* Keep existing mobile visual language, only change the requested card geometry. */
+  .event-grid{grid-template-columns:1fr!important;gap:30px!important;padding:0 4px!important}
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){
+    height:900px!important;
+    min-height:900px!important;
+    max-height:900px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    padding:14px!important;
+    gap:0!important;
+  }
+  .poster-box{
+    width:min(82%,360px)!important;
+    aspect-ratio:3/4!important;
+    height:auto!important;
+    margin:0 auto 18px!important;
+  }
+  .event-info{padding:0 4px 5px!important;text-align:center!important;overflow:visible!important}
+  .event-label{font-size:8px!important;letter-spacing:2.4px!important}
+  .event-info h3{
+    font-size:clamp(30px,8.2vw,46px)!important;
+    line-height:1.03!important;
+    margin:9px auto 13px!important;
+    white-space:normal!important;
+    text-wrap:balance!important;
+    text-align:center!important;
+  }
+  .event-info p{font-size:14px!important;line-height:1.48!important;max-width:92%!important}
+  .event-meta-grid{margin:17px auto 13px!important;gap:9px 13px!important;text-align:left!important}
+  .event-meta-grid b{font-size:7px!important;letter-spacing:1.5px!important}
+  .event-meta-grid span{font-size:10px!important;line-height:1.25!important}
+  .register-btn{min-height:47px!important}
+  .closing-inner p{font-size:10px!important;margin-bottom:20px!important}
+  .button-row{gap:9px!important}
+  .button-row .gold-btn,.button-row .dark-btn{min-height:42px!important;padding:11px 16px!important;font-size:9px!important}
+  .footer>div:first-child p{font-size:15px!important;line-height:1.55!important}
+}
+
+@media(max-width:390px){
+  .mobile-pass{padding:0 10px!important;font-size:8px!important}
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){height:860px!important;min-height:860px!important;max-height:860px!important;padding:12px!important}
+  .poster-box{width:82%!important;margin-bottom:16px!important}
+  .event-info h3{font-size:29px!important;line-height:1.04!important}
+  .event-info p{font-size:12.5px!important}
+}
+
+
+/* =========================================================
+   V11.2 — SECTION NUMBERS + SPOTLIGHT LEGIBILITY + CONTACT LINKS
+   ========================================================= */
+.section-no,
+.simple-number{
+  color:rgba(98,212,223,.72)!important;
+  text-shadow:0 0 18px rgba(22,193,210,.12);
+}
+
+/* Keep the section markers clearly visible without changing their scale. */
+.section-head .section-no{opacity:1!important}
+.simple-main .simple-number{opacity:1!important}
+
+/* Main Spotlight: prevent the stacked title from visually colliding on phones. */
+.spotlight-copy h3{
+  line-height:.98!important;
+  color:var(--ink)!important;
+  text-shadow:0 0 16px rgba(242,246,255,.08);
+}
+@media(max-width:850px){
+  .spotlight-copy h3{
+    line-height:1.02!important;
+    letter-spacing:.2px!important;
+  }
+}
+
+/* Contact cards are true clickable destinations. */
+.contact-card{cursor:pointer}
+.contact-card:hover strong{color:var(--yellow)}
+
+
+/* Final credit emphasis: match the bright, bold navigation treatment. */
+.footer-bottom span{
+  color:var(--ink)!important;
+  font-weight:700!important;
+  letter-spacing:1.25px!important;
+  text-shadow:0 0 12px rgba(242,246,255,.10);
+}
+
+@media(max-width:850px){
+  .closing-inner img.closing-logo{
+    width:min(68vw,280px)!important;
+    max-height:95px!important;
+    margin-bottom:18px!important;
+  }
+  .footer-bottom span{
+    font-weight:700!important;
+    letter-spacing:1px!important;
+  }
+}
+
+
+/* INSOMNIA 30 OCT — 1 NOV + action slots */
+.hero-dates{font:700 clamp(11px,1.15vw,16px) var(--ui);letter-spacing:3px;color:#f6f8ff;margin:-10px 0 22px;text-transform:uppercase}
+.world-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.world-actions .dark-btn{padding:13px 20px;border:1px solid var(--line);border-radius:999px;font:700 10px var(--ui);letter-spacing:1.4px;color:var(--ink)}
+.poster-box img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:2}
+.special-category-card{grid-column:1/-1}
+@media (max-width:850px){
+ .hero-dates{font-size:10px;letter-spacing:2.2px;margin:-2px 0 18px}
+ .world-actions{gap:9px;width:100%}
+ .world-actions .gold-btn,.world-actions .dark-btn{justify-content:center;min-width:150px}
+ .special-category-card{grid-column:auto}
+}
+
+/* =========================================================
+   V11.3 — FEST DATE EMPHASIS + WORLD ACTIONS + SPECIAL CARD FLOW
+   ========================================================= */
+
+/* The festival dates are a headline-level element, not a small metadata label. */
+.hero-dates{
+  display:block!important;
+  width:max-content;
+  max-width:100%;
+  font:700 clamp(28px,3.15vw,52px)/.88 var(--display)!important;
+  letter-spacing:.8px!important;
+  color:var(--yellow)!important;
+  margin:0 0 25px!important;
+  text-transform:uppercase;
+  text-shadow:0 5px 0 rgba(5,8,20,.35),0 0 24px rgba(255,189,24,.14);
+}
+
+/* Larger editorial CTA blocks make better use of the generous space in Every Corner. */
+.world-actions{
+  width:min(820px,92vw)!important;
+  margin:34px auto 0!important;
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px!important;
+  align-items:stretch!important;
+}
+.world-action{
+  min-height:116px;
+  padding:18px 22px 17px!important;
+  border-radius:2px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:6px!important;
+  text-align:left!important;
+  border:1px solid rgba(255,255,255,.22);
+  position:relative;
+  overflow:hidden;
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.world-action:after{
+  content:"";
+  position:absolute;
+  right:-35px;
+  bottom:-55px;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  filter:blur(18px);
+}
+.world-action:hover{transform:translateY(-6px);box-shadow:10px 12px 0 rgba(0,0,0,.28)}
+.world-action small{
+  font:700 8px var(--ui)!important;
+  letter-spacing:2.2px;
+  opacity:.72;
+}
+.world-action strong{
+  font:700 clamp(28px,3.2vw,46px)/.9 var(--display)!important;
+  letter-spacing:.2px;
+  text-transform:uppercase;
+}
+.world-action span{
+  font:700 8px var(--ui)!important;
+  letter-spacing:1.8px;
+  margin-top:5px;
+}
+.world-action-brochure{
+  background:var(--yellow)!important;
+  color:#050814!important;
+  border-color:var(--yellow)!important;
+}
+.world-action-registration{
+  background:rgba(4,8,23,.72)!important;
+  color:var(--ink)!important;
+  border:1px solid rgba(98,212,223,.7)!important;
+}
+.world-action-registration strong{color:var(--cyan)!important}
+
+/* Mr & Miss belongs beside Photography in the final desktop/landscape row. */
+.special-category-card{grid-column:auto!important}
+
+@media(max-width:850px){
+  .hero-dates{
+    font-size:30px!important;
+    letter-spacing:.5px!important;
+    line-height:.9!important;
+    margin:0 0 20px!important;
+  }
+  .world-actions{
+    width:min(520px,92vw)!important;
+    grid-template-columns:1fr!important;
+    gap:11px!important;
+    margin-top:28px!important;
+  }
+  .world-action{min-height:100px!important;padding:16px 19px!important}
+  .world-action strong{font-size:34px!important}
+}
+
+@media(min-width:851px){
+  .world-copy{padding-bottom:120px!important}
+}
+
+
+/* =========================================================
+   V12 — HERO DATE / WORLD CTA REFINEMENT
+   User-requested: dates as a separate corporate headline, no hero Explore Events,
+   matching Brochure + Registration cards, centered Get Pass CTA.
+   ========================================================= */
+.hero-copy{
+  bottom:7vh!important;
+}
+.hero-dates{
+  font-family:var(--ui)!important;
+  font-weight:700!important;
+  font-size:clamp(28px,3.05vw,52px)!important;
+  line-height:1!important;
+  letter-spacing:1.4px!important;
+  color:var(--cyan)!important;
+  margin:4px 0 0!important;
+  text-shadow:0 0 18px rgba(22,193,210,.16)!important;
+  font-variant-numeric:tabular-nums;
+}
+
+.world-actions{
+  width:min(900px,94vw)!important;
+  margin:34px auto 0!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:16px!important;
+}
+.world-actions-top{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+.world-action{
+  min-height:118px!important;
+  padding:22px 28px!important;
+  border-radius:2px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:7px!important;
+  text-align:left!important;
+  border:1px solid rgba(98,212,223,.72)!important;
+  background:rgba(4,8,23,.78)!important;
+  color:var(--ink)!important;
+  box-shadow:none!important;
+}
+.world-action:after{display:none!important}
+.world-action:hover{
+  transform:translateY(-5px)!important;
+  box-shadow:8px 10px 0 rgba(0,0,0,.22)!important;
+  border-color:var(--cyan)!important;
+}
+.world-action small{display:none!important}
+.world-action strong{
+  font-family:var(--display)!important;
+  font-size:clamp(30px,3.25vw,48px)!important;
+  line-height:.9!important;
+  color:var(--cyan)!important;
+}
+.world-action span{
+  font-family:var(--ui)!important;
+  font-size:8px!important;
+  letter-spacing:1.8px!important;
+  color:var(--ink)!important;
+  margin-top:6px!important;
+}
+.world-action-brochure,
+.world-action-registration{
+  background:rgba(4,8,23,.78)!important;
+  color:var(--ink)!important;
+  border:1px solid rgba(98,212,223,.72)!important;
+}
+.world-action-brochure strong,
+.world-action-registration strong{color:var(--cyan)!important}
+.world-action-pass{
+  width:min(340px,72vw)!important;
+  min-height:82px!important;
+  align-items:center!important;
+  text-align:center!important;
+  background:#050814!important;
+  border:1px solid var(--yellow)!important;
+  color:var(--yellow)!important;
+}
+.world-action-pass strong{color:var(--yellow)!important}
+.world-action-pass span{color:var(--yellow)!important}
+.world-action-pass:hover{border-color:var(--yellow)!important;box-shadow:8px 10px 0 rgba(255,189,24,.16)!important}
+
+@media(max-width:850px){
+  .hero-copy{bottom:6vh!important}
+  .hero-dates{
+    font-size:clamp(24px,7.6vw,36px)!important;
+    line-height:.95!important;
+    letter-spacing:.8px!important;
+    margin-top:7px!important;
+  }
+  .world-actions{
+    width:min(560px,94vw)!important;
+    margin-top:28px!important;
+    gap:12px!important;
+  }
+  .world-actions-top{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .world-action{
+    min-height:94px!important;
+    padding:18px 20px!important;
+  }
+  .world-action strong{font-size:34px!important}
+  .world-action-pass{width:min(300px,72vw)!important;min-height:76px!important;align-items:center!important;text-align:center!important}
+}
+
+/* =========================================================
+   V13 — LANDSCAPE WORLD / CTA CONSISTENCY / MOBILE SPECIAL CARD
+   ========================================================= */
+/* Keep the world intro fully below the ticker in short landscape viewports. */
+.world-eyebrow{
+  opacity:1!important;
+  transform:none!important;
+}
+@media (min-width:851px) and (max-height:850px){
+  .world{
+    height:78vh!important;
+    min-height:720px!important;
+  }
+  .world-copy{
+    padding:110px 25px 120px!important;
+    transform:translateY(35px);
+  }
+  .world .display{
+    margin-top:12px!important;
+  }
+  .world .lead{
+    margin-top:20px!important;
+    margin-bottom:24px!important;
+  }
+}
+
+/* Brochure, registration and Get Pass use the same physical card size. */
+.world-actions-top .world-action,
+.world-action-pass{
+  min-height:118px!important;
+  height:118px!important;
+}
+.world-action-pass{
+  width:calc((100% - 16px)/2)!important;
+  max-width:none!important;
+}
+@media(max-width:850px){
+  .world-actions-top .world-action,
+  .world-action-pass{
+    width:100%!important;
+    min-height:94px!important;
+    height:94px!important;
+  }
+  .world-action-pass{
+    max-width:none!important;
+  }
+  /* Never allow the long flagship title to run past the mobile card edge. */
+  .special-event-card .event-info h3{
+    font-size:clamp(25px,7.1vw,34px)!important;
+    line-height:1.02!important;
+    max-width:100%!important;
+    width:100%!important;
+    overflow-wrap:anywhere!important;
+    word-break:normal!important;
+    white-space:normal!important;
+    text-wrap:wrap!important;
+  }
+  .special-event-card .event-info p{
+    max-width:100%!important;
+  }
+}
+
+/* Slightly slower reveal choreography for a calmer, premium feel. */
+@media (prefers-reduced-motion:no-preference){
+  .world-eyebrow{animation:worldEyebrowReveal .95s cubic-bezier(.22,.8,.22,1) both .18s;}
+}
+@keyframes worldEyebrowReveal{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* =========================================================
+   MAIN SPOTLIGHT / NIGHTS OF INSOMNIA — V5
+   Poster slots: main 16:9, night placards 3:4.
+   ========================================================= */
+.spotlight-feature{grid-template-columns:minmax(0,1.28fr) minmax(330px,.72fr);min-height:0;align-items:stretch}
+.spotlight-main-poster{aspect-ratio:16/9;min-height:0;height:auto;overflow:hidden;background:#050a19}
+.spotlight-main-poster img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center;position:relative;z-index:2}
+.spotlight-placeholder{position:absolute;inset:0;display:grid;place-items:center;align-content:center;text-align:center;gap:16px;color:rgba(150,170,200,.3);font:700 clamp(48px,6vw,88px)/.82 var(--display);letter-spacing:-1px}
+.spotlight-placeholder small{display:block;color:rgba(220,230,245,.38);font:700 8px var(--ui);letter-spacing:2px}
+.spotlight-copy{display:flex;flex-direction:column;justify-content:center}
+.spotlight-copy h3{margin:0 0 24px}
+.spotlight-copy p{font-size:clamp(17px,1.6vw,23px);line-height:1.45;color:#d8e0ef;max-width:460px}
+.nights-of-insomnia{max-width:1280px;margin:78px auto 0}
+.nights-heading{margin-bottom:62px;max-width:850px}
+.nights-heading h3{font:700 clamp(42px,5vw,72px)/.88 var(--display);margin:13px 0 0;letter-spacing:-.5px;text-transform:uppercase}
+.insomnia-night{margin-bottom:82px}
+.insomnia-night:last-child{margin-bottom:0}
+.insomnia-night-title{display:flex;align-items:baseline;gap:18px;margin-bottom:22px;border-bottom:1px solid var(--line);padding-bottom:14px}
+.insomnia-night-title span{font:400 clamp(52px,5vw,78px)/.8 var(--display);color:rgba(255,255,255,.12)}
+.insomnia-night-title h4{font:700 clamp(30px,3.2vw,48px)/.9 var(--display);margin:0;letter-spacing:.3px}
+.placard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:900px;margin:0 auto}
+.night-placard{display:block;position:relative;aspect-ratio:3/4;overflow:hidden;border:1px solid var(--line);background:linear-gradient(145deg,rgba(16,27,61,.78),rgba(4,8,23,.98));box-shadow:10px 12px 0 rgba(0,0,0,.28);transition:transform .55s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .55s}
+.night-placard:nth-child(1){transform:rotate(-.7deg)}
+.night-placard:nth-child(2){transform:rotate(.7deg)}
+.night-placard:hover{transform:translateY(-8px) rotate(0)!important;border-color:rgba(22,193,210,.6);box-shadow:15px 18px 0 rgba(0,0,0,.32)}
+.night-placard img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;position:relative;z-index:2}
+.placard-placeholder{position:absolute;inset:0;display:grid;place-items:center;align-content:center;text-align:center;color:rgba(220,230,245,.27);font:700 clamp(48px,6vw,86px)/.8 var(--display);padding:20px}
+.placard-placeholder small{display:block;margin-top:20px;color:rgba(220,230,245,.34);font:700 8px var(--ui);letter-spacing:2px}
+@media(max-width:850px){
+  .spotlight-feature{grid-template-columns:1fr;min-height:0}
+  .spotlight-main-poster{width:100%;aspect-ratio:16/9;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+  .spotlight-placeholder{font-size:clamp(42px,12vw,64px)}
+  .spotlight-copy{padding:38px 24px 42px}
+  .spotlight-copy h3{font-size:clamp(61px,17vw,88px);line-height:.76}
+  .spotlight-copy p{font-size:17px}
+  .nights-of-insomnia{margin-top:58px}
+  .nights-heading{margin-bottom:46px}
+  .nights-heading h3{font-size:clamp(39px,10vw,58px)}
+  .insomnia-night{margin-bottom:58px}
+  .insomnia-night-title{gap:12px;margin-bottom:18px}
+  .insomnia-night-title span{font-size:48px}
+  .insomnia-night-title h4{font-size:31px}
+  .placard-grid{grid-template-columns:1fr 1fr;gap:12px;max-width:none}
+  .night-placard{box-shadow:7px 9px 0 rgba(0,0,0,.28)}
+  .placard-placeholder{font-size:clamp(31px,9vw,48px)}
+  .placard-placeholder small{font-size:6px;margin-top:14px}
+}
+@media(max-width:520px){
+  .spotlight-main-poster{aspect-ratio:16/9}
+  .placard-grid{gap:10px}
+  .night-placard{box-shadow:5px 7px 0 rgba(0,0,0,.28)}
+  .insomnia-night-title{margin-bottom:15px}
+  .insomnia-night-title h4{font-size:28px}
+  .nights-heading h3{line-height:.9}
+}
+/* Keep the main landscape artwork mathematically 16:9 on desktop while allowing the copy column to match its height. */
+@media(min-width:851px){
+  .spotlight-feature{align-items:start}
+  .spotlight-main-poster{align-self:start}
+  .spotlight-copy{align-self:stretch}
+}
+
+/* =========================================================
+   MAIN SPOTLIGHT — V6 REFINEMENT
+   - Nights title is the single gold heading.
+   - Night labels are NIGHT 01 / NIGHT 02 / NIGHT 03 only.
+   - Mobile placards become large single-column 3:4 posters.
+   - Desktop spotlight keeps the 16:9 poster dominant and gives
+     the Nights of Insomnia a dedicated side column.
+   ========================================================= */
+.spotlight{scroll-margin-top:82px}
+.spotlight-feature{grid-template-columns:minmax(0,1.62fr) minmax(270px,.58fr);gap:34px;align-items:stretch}
+.spotlight-main-poster{width:100%;aspect-ratio:16/9;min-height:0;height:auto}
+.spotlight-copy{justify-content:center;padding:30px 0 30px 4px}
+.spotlight-copy .eyebrow{margin-bottom:20px}
+.spotlight-copy h3{font-size:clamp(58px,5.8vw,92px);line-height:.78;letter-spacing:-1.8px;margin:0;color:var(--ink)}
+.nights-of-insomnia{margin-top:88px}
+.nights-heading{margin-bottom:54px;max-width:none}
+.nights-heading h3{font:700 clamp(46px,5.5vw,82px)/.88 var(--display);letter-spacing:-1px;text-transform:uppercase;color:var(--yellow);margin:0}
+.insomnia-night-title{gap:0;margin-bottom:24px;padding-bottom:15px}
+.insomnia-night-title h4{font-size:clamp(34px,3.6vw,54px);letter-spacing:.2px}
+@media(min-width:851px){
+  .spotlight-feature{grid-template-columns:minmax(0,1.64fr) minmax(250px,.56fr)}
+  .spotlight-copy{min-width:0}
+  .spotlight-copy h3{font-size:clamp(55px,5.2vw,84px)}
+  .placard-grid{max-width:980px}
+}
+@media(max-width:850px){
+  .spotlight{scroll-margin-top:70px}
+  .spotlight-feature{grid-template-columns:1fr;gap:0}
+  .spotlight-main-poster{aspect-ratio:16/9}
+  .spotlight-copy{padding:34px 4px 8px;align-items:flex-start}
+  .spotlight-copy .eyebrow{font-size:9px;letter-spacing:3.2px;margin-bottom:16px}
+  .spotlight-copy h3{font-size:clamp(58px,16vw,86px);line-height:.79}
+  .nights-of-insomnia{margin-top:64px}
+  .nights-heading{margin-bottom:52px}
+  .nights-heading h3{font-size:clamp(46px,13vw,72px);line-height:.86}
+  .insomnia-night{margin-bottom:72px}
+  .insomnia-night-title{margin-bottom:18px;padding-bottom:13px}
+  .insomnia-night-title h4{font-size:clamp(34px,9vw,48px)}
+  .placard-grid{grid-template-columns:1fr;gap:18px;max-width:100%;}
+  .night-placard{width:100%;aspect-ratio:3/4;box-shadow:8px 10px 0 rgba(0,0,0,.3)}
+  .placard-placeholder{font-size:clamp(48px,13vw,72px);padding:24px}
+  .placard-placeholder small{font-size:7px;margin-top:18px}
+}
+@media(max-width:520px){
+  .spotlight-main-poster{aspect-ratio:16/9}
+  .spotlight-copy{padding-top:30px}
+  .spotlight-copy h3{font-size:clamp(56px,16.5vw,76px)}
+  .nights-heading h3{font-size:clamp(43px,12.5vw,62px)}
+  .placard-grid{gap:16px}
+  .night-placard{box-shadow:7px 9px 0 rgba(0,0,0,.28)}
+}
+
+
+/* =========================================================
+   V7 — CONTACT / EVENT CARD / WORLD CTA FINAL MOBILE POLISH
+   ========================================================= */
+
+/* Contact: remove the old "find the people..." label and make the contact
+   destinations fit cleanly inside narrow mobile viewports. */
+.contact-card span{
+  font-size:12px!important;
+  letter-spacing:2.8px!important;
+}
+.contact-card strong{
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+}
+@media(max-width:850px){
+  .contact-grid{
+    width:100%!important;
+    grid-template-columns:1fr!important;
+    gap:14px!important;
+    margin-top:38px!important;
+  }
+  .contact-card{
+    width:100%!important;
+    min-width:0!important;
+    min-height:145px!important;
+    padding:22px 18px!important;
+    box-sizing:border-box!important;
+  }
+  .contact-card span{
+    font-size:12px!important;
+    letter-spacing:2.6px!important;
+  }
+  .contact-card strong{
+    font-size:clamp(20px,6vw,28px)!important;
+    line-height:1!important;
+    max-width:100%!important;
+  }
+  .contact-card small{
+    font-size:11px!important;
+    line-height:1.45!important;
+    margin-top:10px!important;
+  }
+}
+
+/* World CTAs: all three labels/titles are centered consistently. */
+.world-actions-top .world-action,
+.world-action-pass{
+  align-items:center!important;
+  text-align:center!important;
+}
+.world-actions-top .world-action span,
+.world-action-pass span{
+  text-align:center!important;
+}
+
+/* Event cards: on phones, enlarge the poster while removing the fixed
+   empty vertical space beneath the event information. */
+@media(max-width:850px){
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:0!important;
+    padding:12px!important;
+    overflow:hidden!important;
+  }
+  .poster-box{
+    width:min(78%,330px)!important;
+    aspect-ratio:3/4!important;
+    height:auto!important;
+    margin:0 auto 14px!important;
+  }
+  .event-info{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    padding:0 8px 4px!important;
+    flex:none!important;
+  }
+  .event-label{font-size:8px!important;letter-spacing:2.2px!important}
+  .event-info h3{
+    font-size:clamp(29px,8.2vw,43px)!important;
+    line-height:1!important;
+    margin:8px 0 10px!important;
+  }
+  .event-info p{
+    font-size:13px!important;
+    line-height:1.42!important;
+    max-width:94%!important;
+  }
+  .event-meta-grid{
+    gap:7px 12px!important;
+    margin:14px 0 11px!important;
+  }
+  .event-meta-grid>div{padding-top:6px!important}
+  .event-meta-grid b{font-size:7px!important;letter-spacing:1.4px!important}
+  .event-meta-grid span{font-size:9.5px!important;line-height:1.2!important}
+  .register-btn{
+    min-height:45px!important;
+    margin-top:7px!important;
+    font-size:8.5px!important;
+  }
+}
+@media(max-width:390px){
+  .contact-card{padding:20px 16px!important;min-height:138px!important}
+  .contact-card span{font-size:11px!important}
+  .contact-card strong{font-size:19px!important}
+  .event-card,
+  .event-card:nth-child(even),
+  .event-card:nth-child(3n){padding:10px!important}
+  .poster-box{width:min(80%,300px)!important;margin-bottom:12px!important}
+  .event-info h3{font-size:27px!important}
+  .event-info p{font-size:12px!important}
+  .event-meta-grid{margin:12px 0 9px!important}
+  .register-btn{min-height:43px!important}
+}
+
+/* Main Spotlight heading now begins directly with Night 01. */
+.nights-heading{display:none!important}
+
+
+/* =========================================================
+   V11.3 — MAIN SPOTLIGHT CAROUSEL + MOBILE MR/MISS + FOOTER CREDIT
+   ========================================================= */
+.spotlight-main-poster{position:relative;overflow:hidden;background:#050a19}
+.spotlight-slide{position:absolute;inset:0;width:100%;height:100%;transform:translateX(100%);opacity:0;transition:transform .75s cubic-bezier(.22,.8,.22,1),opacity .55s ease;z-index:2;will-change:transform,opacity}
+.spotlight-slide.is-active{transform:translateX(0);opacity:1}
+.spotlight-slide img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
+.spotlight-main-poster .spotlight-placeholder{z-index:1}
+
+.footer-credit{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px}
+.footer-credit .footer-built,
+.footer-credit .footer-club{display:block;min-width:0!important;overflow-wrap:normal!important;white-space:normal!important}
+.footer-credit .footer-built{order:1}
+.footer-credit .developer-instagram{order:2;display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:10px 18px;border:1px solid rgba(230,240,255,.22);border-radius:999px;color:var(--ink);font:700 9px var(--ui);letter-spacing:1.8px;transition:transform .25s ease,border-color .25s ease,color .25s ease,background .25s ease}
+.footer-credit .developer-instagram:hover{transform:translateY(-2px);border-color:var(--yellow);color:var(--yellow);background:rgba(255,189,24,.06)}
+.footer-credit .footer-club{order:3}
+.footer-credit .footer-copyright{order:4;margin-top:6px;color:#6f7c94!important;font-weight:500!important;letter-spacing:1px!important}
+@media(max-width:850px){
+  .special-event-card .event-info h3{font-size:clamp(24px,6.8vw,32px)!important;line-height:1.02!important;letter-spacing:-.15px!important;max-width:calc(100% - 6px)!important;width:calc(100% - 6px)!important;overflow-wrap:break-word!important;word-break:normal!important;white-space:normal!important;text-wrap:balance!important;margin-left:auto!important;margin-right:auto!important}
+  .footer-credit{gap:9px!important}
+  .footer-credit .footer-built,.footer-credit .footer-club{font-size:13px!important;line-height:1.45!important;letter-spacing:1px!important}
+  .footer-credit .developer-instagram{min-height:40px;padding:10px 17px;font-size:8px!important}
+  .footer-credit .footer-copyright{font-size:8px!important;line-height:1.5!important}
+}
+
+
+/* =========================================================
+   FINAL POLISH — SPOTLIGHT ARTWORK + FOOTER CONSISTENCY
+   ========================================================= */
+/* The supplied landscape artwork contains transparent areas. Keep a solid
+   backdrop behind it so legacy placeholder lettering can never show through. */
+.spotlight-main-poster{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16 / 9!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  align-self:start!important;
+  background:#050a19!important;
+}
+.spotlight-main-poster .spotlight-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  background:#050a19!important;
+}
+.spotlight-main-poster .spotlight-slide img{
+  width:100%!important;
+  height:100%!important;
+  display:block!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#050a19!important;
+}
+/* Do not render the old placeholder text underneath the transparent PNG. */
+.spotlight-main-poster .spotlight-placeholder{display:none!important}
+
+/* Keep the Nights of Insomnia title bold, clean and white, with enough
+   breathing room to remain legible on both desktop and narrow phones. */
+.spotlight-copy h3{
+  font-family:'Anton',Impact,sans-serif!important;
+  font-weight:400!important;
+  color:#f7f9ff!important;
+  text-shadow:0 4px 18px rgba(0,0,0,.24);
+  letter-spacing:-.8px!important;
+  line-height:.88!important;
+  margin:0!important;
+  white-space:normal!important;
+  overflow:visible!important;
+}
+@media(min-width:851px){
+  .spotlight-copy h3{font-size:clamp(56px,5.4vw,88px)!important}
+}
+@media(max-width:850px){
+  .spotlight-main-poster{width:100%!important;aspect-ratio:16/9!important;height:auto!important}
+  .spotlight-copy{padding:32px 4px 10px!important}
+  .spotlight-copy h3{font-size:clamp(54px,15.5vw,78px)!important;line-height:.9!important}
+}
+@media(max-width:420px){
+  .spotlight-copy h3{font-size:clamp(50px,15vw,68px)!important;line-height:.91!important}
+}
+
+/* Mr & Miss Insomnia: prevent the final A from being clipped on phones. */
+@media(max-width:850px){
+  .special-event-card .event-info h3,
+  .special-category-card h3{
+    width:100%!important;
+    max-width:100%!important;
+    padding-right:5px!important;
+    overflow:visible!important;
+    white-space:normal!important;
+    word-break:normal!important;
+    overflow-wrap:normal!important;
+  }
+}
+
+/* Footer credit is identical on every page. */
+.footer-credit{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  gap:10px!important;
+}
+.footer-credit .footer-built,
+.footer-credit .footer-club{
+  display:block!important;
+  min-width:0!important;
+  width:auto!important;
+  max-width:100%!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+  white-space:normal!important;
+}
+.footer-credit .footer-built{order:1!important}
+.footer-credit .developer-instagram{
+  order:2!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:40px!important;
+  padding:10px 18px!important;
+  border:1px solid rgba(230,240,255,.22)!important;
+  border-radius:999px!important;
+  color:var(--ink)!important;
+  font:700 9px var(--ui)!important;
+  letter-spacing:1.8px!important;
+  transition:transform .25s ease,border-color .25s ease,color .25s ease,background .25s ease!important;
+}
+.footer-credit .developer-instagram:hover{
+  transform:translateY(-2px)!important;
+  border-color:var(--yellow)!important;
+  color:var(--yellow)!important;
+  background:rgba(255,189,24,.06)!important;
+}
+.footer-credit .footer-club{order:3!important}
+.footer-credit .footer-copyright{
+  order:4!important;
+  margin-top:6px!important;
+  color:#6f7c94!important;
+  font-weight:500!important;
+  letter-spacing:1px!important;
+}
+@media(max-width:850px){
+  .footer-credit{gap:9px!important}
+  .footer-credit .footer-built,
+  .footer-credit .footer-club{font-size:13px!important;line-height:1.45!important;letter-spacing:1px!important}
+  .footer-credit .developer-instagram{min-height:40px!important;padding:10px 17px!important;font-size:8px!important}
+  .footer-credit .footer-copyright{font-size:8px!important;line-height:1.5!important}
+}
+
+
+/* =========================================================
+   SPOTLIGHT CAROUSEL — FINAL MOBILE/DESKTOP ARTWORK FIX
+   ========================================================= */
+.spotlight-main-poster{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16 / 9!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#050a19!important;
+  display:block!important;
+  touch-action:pan-y!important;
+}
+.spotlight-main-poster .spotlight-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:10px!important;
+  background:#050a19!important;
+  transform:translateX(100%)!important;
+  opacity:0!important;
+  transition:transform .72s cubic-bezier(.22,.8,.22,1),opacity .45s ease!important;
+  z-index:2!important;
+  pointer-events:none!important;
+}
+.spotlight-main-poster .spotlight-slide.is-active{
+  transform:translateX(0)!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+.spotlight-main-poster .spotlight-slide.is-prev{
+  transform:translateX(-100%)!important;
+  opacity:0!important;
+}
+.spotlight-main-poster.is-instant .spotlight-slide{
+  transition:none!important;
+}
+.spotlight-main-poster .spotlight-slide img{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#050a19!important;
+  flex:0 1 auto!important;
+}
+.spotlight-main-poster .spotlight-placeholder{display:none!important}
+
+.spotlight-dots{
+  position:absolute!important;
+  left:50%!important;
+  bottom:12px!important;
+  transform:translateX(-50%)!important;
+  z-index:8!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  padding:6px 9px!important;
+  border:1px solid rgba(230,240,255,.16)!important;
+  border-radius:999px!important;
+  background:rgba(3,7,22,.58)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+}
+.spotlight-dot{
+  width:7px!important;
+  height:7px!important;
+  min-width:7px!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.62)!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.22)!important;
+  cursor:pointer!important;
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  transition:width .25s ease,background .25s ease,border-color .25s ease,transform .25s ease!important;
+}
+.spotlight-dot.is-active{
+  width:20px!important;
+  min-width:20px!important;
+  border-radius:999px!important;
+  background:var(--yellow)!important;
+  border-color:var(--yellow)!important;
+  transform:scale(1.02)!important;
+}
+
+/* Nights of Insomnia: strong white display treatment with deliberate spacing. */
+.spotlight-copy{
+  padding-top:44px!important;
+  padding-bottom:44px!important;
+}
+.spotlight-copy h3{
+  font-family:'Anton',Impact,sans-serif!important;
+  font-weight:400!important;
+  color:#f7f9ff!important;
+  font-size:clamp(56px,5.2vw,86px)!important;
+  line-height:1.02!important;
+  letter-spacing:-.9px!important;
+  margin:8px 0 0!important;
+  text-transform:uppercase!important;
+  text-shadow:0 4px 18px rgba(0,0,0,.24)!important;
+}
+.spotlight-copy h3 br{display:block!important;content:""!important;margin:0!important}
+@media(max-width:850px){
+  .spotlight-main-poster{aspect-ratio:16 / 9!important}
+  .spotlight-main-poster .spotlight-slide{padding:8px!important}
+  .spotlight-copy{padding:42px 8px 30px!important}
+  .spotlight-copy .eyebrow{margin-bottom:18px!important}
+  .spotlight-copy h3{
+    font-size:clamp(52px,15vw,72px)!important;
+    line-height:1.03!important;
+    letter-spacing:-.5px!important;
+    margin-top:8px!important;
+  }
+  .spotlight-dots{bottom:10px!important;gap:7px!important}
+}
+@media(max-width:420px){
+  .spotlight-copy{padding:40px 8px 28px!important}
+  .spotlight-copy h3{
+    font-size:clamp(48px,14.5vw,64px)!important;
+    line-height:1.05!important;
+    letter-spacing:-.2px!important;
+  }
+}
+
+
+/* =========================================================
+   FINAL SPOTLIGHT ARTWORK / MOBILE TYPOGRAPHY POLISH
+   ========================================================= */
+.spotlight-main-poster{
+  position:relative!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  overflow:hidden!important;
+  background:#050a19!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  touch-action:pan-y!important;
+}
+.spotlight-viewport{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16 / 9!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#050a19!important;
+}
+.spotlight-main-poster .spotlight-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:#050a19!important;
+  transform:translateX(100%)!important;
+  opacity:0!important;
+  transition:transform .72s cubic-bezier(.22,.8,.22,1),opacity .45s ease!important;
+  z-index:2!important;
+  pointer-events:none!important;
+}
+.spotlight-main-poster .spotlight-slide.is-active{
+  transform:translateX(0)!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+.spotlight-main-poster .spotlight-slide.is-prev{
+  transform:translateX(-100%)!important;
+  opacity:0!important;
+}
+.spotlight-main-poster.is-instant .spotlight-slide{transition:none!important}
+.spotlight-main-poster .spotlight-slide img{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  background:#050a19!important;
+  flex:0 0 auto!important;
+}
+.spotlight-main-poster .spotlight-placeholder{display:none!important}
+
+/* Dedicated control strip: dots sit below the 16:9 artwork, never on top of it. */
+.spotlight-dots{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  width:100%!important;
+  min-height:38px!important;
+  flex:0 0 38px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:9px!important;
+  padding:7px 10px!important;
+  border:0!important;
+  border-top:1px solid rgba(230,240,255,.10)!important;
+  border-radius:0!important;
+  background:rgba(3,7,22,.72)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  z-index:10!important;
+}
+.spotlight-dot{
+  width:8px!important;
+  height:8px!important;
+  min-width:8px!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.72)!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.22)!important;
+  cursor:pointer!important;
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  transition:all .25s ease!important;
+}
+.spotlight-dot.is-active{
+  width:8px!important;
+  min-width:8px!important;
+  height:8px!important;
+  border-radius:50%!important;
+  background:var(--yellow)!important;
+  border-color:var(--yellow)!important;
+  transform:scale(1.18)!important;
+}
+
+/* Desktop: retain the strong white heading and generous breathing room. */
+.spotlight-copy h3{
+  font-family:'Anton',Impact,sans-serif!important;
+  font-weight:400!important;
+  color:#f7f9ff!important;
+  text-shadow:0 4px 18px rgba(0,0,0,.24)!important;
+  letter-spacing:-.8px!important;
+  line-height:.96!important;
+  margin:0!important;
+  white-space:normal!important;
+  overflow:visible!important;
+}
+@media(min-width:851px){
+  .spotlight-copy{padding:34px 0 34px 8px!important}
+  .spotlight-copy .eyebrow{margin-bottom:22px!important}
+  .spotlight-copy h3{font-size:clamp(56px,5.4vw,88px)!important;line-height:.94!important}
+}
+
+/* Mobile: keep the same bold white treatment, but use two balanced lines
+   instead of four huge lines so the title does not consume the screen. */
+@media(max-width:850px){
+  .spotlight-feature{gap:0!important}
+  .spotlight-main-poster{width:100%!important}
+  .spotlight-copy{padding:30px 4px 18px!important;align-items:flex-start!important}
+  .spotlight-copy .eyebrow{font-size:9px!important;letter-spacing:3.2px!important;margin-bottom:15px!important}
+  .spotlight-copy h3{
+    font-size:clamp(42px,12vw,58px)!important;
+    line-height:1.02!important;
+    letter-spacing:-.35px!important;
+    margin:0!important;
+    white-space:normal!important;
+  }
+  .spotlight-copy h3 br{display:none!important}
+}
+@media(max-width:420px){
+  .spotlight-copy{padding:28px 2px 16px!important}
+  .spotlight-copy h3{font-size:clamp(40px,11.8vw,52px)!important;line-height:1.04!important}
+}
+
+/* =========================================================
+   FINAL MOBILE SPOTLIGHT FIX
+   Desktop spotlight remains unchanged.
+   ========================================================= */
+@media (max-width:850px){
+  /* Keep the poster viewport in the exact native 16:9 ratio.
+     The image itself is sized by width so the full 1536x864 artwork
+     is always visible without bottom cropping. */
+  .spotlight-main-poster{
+    aspect-ratio:auto!important;
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+  }
+  .spotlight-viewport{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:16 / 9!important;
+    flex:0 0 auto!important;
+    overflow:hidden!important;
+  }
+  .spotlight-main-poster .spotlight-slide{
+    padding:0!important;
+    width:100%!important;
+    height:100%!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  .spotlight-main-poster .spotlight-slide img{
+    width:100%!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:100%!important;
+    object-fit:contain!important;
+    object-position:center center!important;
+    flex:none!important;
+  }
+
+  /* Separate control strip, but restore the earlier animated active-pill dots. */
+  .spotlight-dots{
+    position:relative!important;
+    left:auto!important;
+    bottom:auto!important;
+    transform:none!important;
+    width:100%!important;
+    min-height:54px!important;
+    height:54px!important;
+    flex:0 0 54px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:8px!important;
+    padding:8px 10px!important;
+    border:0!important;
+    border-top:1px solid rgba(230,240,255,.10)!important;
+    border-radius:0!important;
+    background:rgba(3,7,22,.72)!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    z-index:10!important;
+  }
+  .spotlight-dot{
+    width:8px!important;
+    height:8px!important;
+    min-width:8px!important;
+    padding:0!important;
+    border:1px solid rgba(255,255,255,.62)!important;
+    border-radius:50%!important;
+    background:rgba(255,255,255,.22)!important;
+    transform:none!important;
+    transition:width .28s ease,min-width .28s ease,background .28s ease,border-color .28s ease,transform .28s ease!important;
+  }
+  .spotlight-dot.is-active{
+    width:20px!important;
+    min-width:20px!important;
+    height:8px!important;
+    border-radius:999px!important;
+    background:var(--yellow)!important;
+    border-color:var(--yellow)!important;
+    transform:scale(1.02)!important;
+  }
+
+  /* Restore the intended four-line title on mobile. */
+  .spotlight-copy{
+    padding:30px 12px 28px!important;
+    min-width:0!important;
+    overflow:hidden!important;
+  }
+  .spotlight-copy .eyebrow{
+    margin-bottom:20px!important;
+  }
+  .spotlight-copy h3{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    font-size:clamp(48px,13.5vw,64px)!important;
+    line-height:.94!important;
+    letter-spacing:-.35px!important;
+    margin:0!important;
+    white-space:normal!important;
+    overflow:visible!important;
+    word-break:normal!important;
+  }
+  .spotlight-copy h3 br{display:block!important}
+}
+
+@media (max-width:420px){
+  .spotlight-copy{padding:28px 10px 26px!important}
+  .spotlight-copy .eyebrow{margin-bottom:18px!important}
+  .spotlight-copy h3{
+    font-size:clamp(45px,13.4vw,56px)!important;
+    line-height:.95!important;
+    letter-spacing:-.25px!important;
+  }
+}
+
+/* =========================================================
+   SPOTLIGHT — NATIVE 16:9 ARTWORK / FINAL RESPONSIVE FIX
+   The source posters are 1536x864. Keep the viewport at exactly
+   16:9 and size the artwork by width so the complete poster is
+   always visible and centered on every screen size.
+   ========================================================= */
+.spotlight-main-poster .spotlight-viewport{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16 / 9!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  display:block!important;
+  background:#050a19!important;
+}
+.spotlight-main-poster .spotlight-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  overflow:hidden!important;
+}
+.spotlight-main-poster .spotlight-slide img{
+  position:absolute!important;
+  left:50%!important;
+  top:50%!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:none!important;
+  transform:translate(-50%,-50%)!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  display:block!important;
+  margin:0!important;
+  flex:none!important;
+  background:#050a19!important;
+}
+
+/* The control strip stays separate from the artwork on desktop too.
+   Restore the animated active-pill treatment everywhere. */
+.spotlight-dots{
+  position:relative!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  width:100%!important;
+  min-height:54px!important;
+  height:54px!important;
+  flex:0 0 54px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  padding:8px 10px!important;
+  border:0!important;
+  border-top:1px solid rgba(230,240,255,.10)!important;
+  border-radius:0!important;
+  background:rgba(3,7,22,.72)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.spotlight-dot{
+  width:8px!important;
+  height:8px!important;
+  min-width:8px!important;
+  padding:0!important;
+  border:1px solid rgba(255,255,255,.62)!important;
+  border-radius:50%!important;
+  background:rgba(255,255,255,.22)!important;
+  transform:none!important;
+  transition:width .28s ease,min-width .28s ease,background .28s ease,border-color .28s ease,transform .28s ease!important;
+}
+.spotlight-dot.is-active{
+  width:20px!important;
+  min-width:20px!important;
+  height:8px!important;
+  border-radius:999px!important;
+  background:var(--yellow)!important;
+  border-color:var(--yellow)!important;
+  transform:scale(1.02)!important;
+}
+
+/* Mobile uses the exact same 16:9 viewport; do not introduce a
+   portrait crop or a fixed-height image box. */
+@media(max-width:850px){
+  .spotlight-main-poster .spotlight-viewport{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:16 / 9!important;
+    flex:0 0 auto!important;
+  }
+  .spotlight-main-poster .spotlight-slide img{
+    width:100%!important;
+    height:auto!important;
+    max-width:none!important;
+    max-height:none!important;
+  }
+}
+
+/* =========================================================
+   SPOTLIGHT — IMAGE BOX / CAROUSEL CONTROL BOX SEPARATION
+   The supplied artwork is native 16:9. Keep that artwork centered
+   inside its own 16:9 box; the carousel controls live in a separate
+   box and therefore never affect image centering or available height.
+   ========================================================= */
+.spotlight-main-poster{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  overflow:visible!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  background:transparent!important;
+  position:relative!important;
+}
+.spotlight-image-box{
+  position:relative!important;
+  width:100%!important;
+  aspect-ratio:16 / 9!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  background:#050a19!important;
+  display:block!important;
+  flex:0 0 auto!important;
+}
+.spotlight-image-box .spotlight-slide{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:0!important;
+  background:#050a19!important;
+  transform:translateX(100%)!important;
+  opacity:0!important;
+  transition:transform .72s cubic-bezier(.22,.8,.22,1),opacity .45s ease!important;
+  z-index:2!important;
+  pointer-events:none!important;
+}
+.spotlight-image-box .spotlight-slide.is-active{
+  transform:translateX(0)!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+}
+.spotlight-image-box .spotlight-slide.is-prev{
+  transform:translateX(-100%)!important;
+  opacity:0!important;
+}
+.spotlight-image-box .spotlight-slide img{
+  position:relative!important;
+  inset:auto!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:50% 50%!important;
+  background:#050a19!important;
+  flex:0 1 auto!important;
+}
+.spotlight-image-box .spotlight-placeholder{display:none!important}
+.spotlight-dots{
+  position:relative!important;
+  inset:auto!important;
+  left:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+  width:100%!important;
+  min-height:58px!important;
+  margin:0!important;
+  padding:10px 14px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  border:1px solid rgba(230,240,255,.16)!important;
+  border-top:0!important;
+  border-radius:0!important;
+  background:rgba(3,7,22,.42)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+  z-index:8!important;
+  box-sizing:border-box!important;
+}
+@media(max-width:850px){
+  .spotlight-main-poster{width:100%!important;aspect-ratio:auto!important;height:auto!important;overflow:visible!important}
+  .spotlight-image-box{width:100%!important;aspect-ratio:16 / 9!important;height:auto!important}
+  .spotlight-image-box .spotlight-slide{padding:0!important}
+  .spotlight-image-box .spotlight-slide img{width:100%!important;height:100%!important;object-fit:contain!important;object-position:center center!important}
+  .spotlight-dots{min-height:58px!important;padding:10px 12px!important}
+}
+
+/* =========================================================
+   SPOTLIGHT — DEFINITIVE 16:9 ARTWORK FIX
+   The artwork box and carousel-control box are independent.
+   The source artwork is 1536x864, so the image itself is sized
+   from its natural 16:9 ratio and centered inside the image box.
+   ========================================================= */
+.spotlight-main-poster{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:auto!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:stretch!important;
+  justify-content:flex-start!important;
+  overflow:visible!important;
+  position:relative!important;
+  background:transparent!important;
+}
+.spotlight-image-box{
+  position:relative!important;
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:16 / 9!important;
+  min-height:0!important;
+  overflow:hidden!important;
+  flex:0 0 auto!important;
+  background:#050a19!important;
+}
+.spotlight-image-box .spotlight-slide{
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  width:100%!important;
+  height:100%!important;
+  padding:0!important;
+  margin:0!important;
+  display:block!important;
+  overflow:hidden!important;
+  background:#050a19!important;
+  transform:translateX(100%)!important;
+  opacity:0!important;
+  transition:transform .72s cubic-bezier(.22,.8,.22,1),opacity .45s ease!important;
+  z-index:2!important;
+}
+.spotlight-image-box .spotlight-slide.is-active{transform:translateX(0)!important;opacity:1!important}
+.spotlight-image-box .spotlight-slide.is-prev{transform:translateX(-100%)!important;opacity:0!important}
+/* Size by width to preserve native 1536x864 ratio; center in image box. */
+.spotlight-image-box .spotlight-slide img{
+  position:absolute!important;
+  left:0!important;
+  top:50%!important;
+  width:100%!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:0!important;
+  padding:0!important;
+  display:block!important;
+  transform:translateY(-50%)!important;
+  object-fit:initial!important;
+  object-position:center!important;
+  background:#050a19!important;
+}
+/* Carousel controls are a completely separate box. */
+.spotlight-dots{
+  position:relative!important;
+  inset:auto!important;
+  width:100%!important;
+  height:58px!important;
+  min-height:58px!important;
+  flex:0 0 58px!important;
+  margin:0!important;
+  padding:10px 14px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  border:1px solid rgba(230,240,255,.16)!important;
+  border-top:0!important;
+  border-radius:0!important;
+  background:rgba(3,7,22,.42)!important;
+  backdrop-filter:blur(8px)!important;
+  -webkit-backdrop-filter:blur(8px)!important;
+  transform:none!important;
+}
+.spotlight-dot{
+  width:8px!important;height:8px!important;min-width:8px!important;padding:0!important;
+  border-radius:50%!important;border:1px solid rgba(255,255,255,.62)!important;
+  background:rgba(255,255,255,.22)!important;
+  transition:width .28s ease,min-width .28s ease,background .28s ease,border-color .28s ease,transform .28s ease!important;
+}
+.spotlight-dot.is-active{
+  width:20px!important;min-width:20px!important;height:8px!important;border-radius:999px!important;
+  background:var(--yellow)!important;border-color:var(--yellow)!important;transform:scale(1.02)!important;
+}
+@media(max-width:850px){
+  .spotlight-image-box{width:100%!important;aspect-ratio:16 / 9!important;height:auto!important}
+  .spotlight-image-box .spotlight-slide img{width:100%!important;height:auto!important;top:50%!important;transform:translateY(-50%)!important}
+  .spotlight-dots{height:58px!important;min-height:58px!important;flex-basis:58px!important}
+}
+
+
+/* =========================================================
+   INSOMNIA GET PASSES — integrated page styles
+   Keep all pass-page styling here so passes.html needs no
+   separate stylesheet.
+   ========================================================= */
+.passes-page .grain{display:none}
+.passes-page .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(2,6,20,.98)}
+.passes-main{padding-top:72px;background:radial-gradient(circle at 82% 8%,rgba(22,193,210,.045),transparent 28%),radial-gradient(circle at 8% 42%,rgba(169,147,255,.035),transparent 30%)}
+.passes-hero{max-width:1240px;margin:0 auto;padding:78px 5vw 72px}
+.passes-hero-number{font:400 clamp(58px,8vw,100px)/.8 var(--display);color:var(--cyan)}
+.passes-mega{font:700 clamp(92px,12vw,170px)/.76 var(--display);letter-spacing:-2px;margin:20px 0 62px;text-transform:uppercase}
+.passes-mega span{color:var(--yellow)}
+.passes-intro{display:grid;grid-template-columns:minmax(0,1fr) 30%;min-height:360px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(10,20,48,.9),rgba(3,7,22,.72));overflow:hidden}
+.passes-intro-copy{padding:54px 6vw 54px}
+.passes-intro-copy h2{font:700 clamp(62px,7vw,104px)/.78 var(--display);letter-spacing:-1px;margin:20px 0 25px}
+.passes-intro-copy p{max-width:820px;color:#b8c2d4;font-size:18px;line-height:1.75;margin:0}
+.passes-intro-mark{border-left:1px solid var(--line);display:grid;place-items:center;position:relative;background:rgba(255,189,24,.012);padding:30px}
+.passes-intro-mark:before{content:"";position:absolute;width:150px;height:190px;border:1px solid rgba(22,193,210,.18);border-radius:18px;background:rgba(22,193,210,.018);box-shadow:0 0 55px rgba(22,193,210,.06)}
+.passes-intro-mark img{width:120px;max-height:155px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 12px 25px rgba(22,193,210,.12))}
+.batch-passes{max-width:1240px;margin:0 auto;padding:0 5vw 110px}
+.batch-list{display:grid;gap:20px}
+.batch-card{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(350px,.92fr);min-height:470px;border:1px solid var(--line);background:linear-gradient(125deg,rgba(7,15,37,.96),rgba(3,7,22,.98));overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.22);contain:layout paint}
+.batch-card:nth-child(even) .batch-payment{order:-1;border-left:0;border-right:1px solid var(--line)}
+.batch-card:nth-child(even) .batch-copy{order:2}
+.batch-copy{padding:58px 64px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;position:relative}
+.batch-copy:after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;left:-145px;bottom:-155px;background:rgba(22,193,210,.035);pointer-events:none}
+.batch-kicker{font:700 11px var(--ui);letter-spacing:3.2px;color:var(--cyan)}
+.batch-kicker span{color:var(--yellow)}
+.batch-copy h3{font:700 clamp(100px,10vw,150px)/.72 var(--display);letter-spacing:-2px;margin:24px 0 28px}
+.batch-invite{max-width:600px;margin:0;color:#b9c3d5;font-size:18px;line-height:1.72}
+.batch-prompt{margin:28px 0 0;color:#91a0b9;font:500 14px/1.55 var(--ui);letter-spacing:.35px}
+.batch-prompt strong{color:var(--ink)}
+.batch-form-btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;margin-top:18px;padding:15px 23px;background:var(--yellow);color:#050814!important;border-radius:999px;font:700 10px var(--ui);letter-spacing:1.6px;transition:background .2s ease,transform .2s ease}
+.batch-form-btn:hover{transform:translateY(-2px);background:#ffd449}
+.batch-form-btn span{font-size:16px}
+.batch-payment{border-left:1px solid var(--line);padding:40px 42px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(255,189,24,.01)}
+.qr-label{font:700 10px var(--ui);letter-spacing:2.8px;color:var(--yellow);margin-bottom:20px;text-align:center}
+.qr-placeholder{width:min(315px,100%);aspect-ratio:1/1;border:1px dashed rgba(230,240,255,.38);background:rgba(8,16,36,.52);display:flex;align-items:center;justify-content:center;flex-direction:column;position:relative}
+.qr-placeholder:before,.qr-placeholder:after{content:"";position:absolute;width:25px;height:25px;border-color:var(--cyan);border-style:solid}
+.qr-placeholder:before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+.qr-placeholder:after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+.qr-placeholder span{font:700 58px/.8 var(--display);color:rgba(230,240,255,.22)}
+.qr-placeholder small{font:700 9px var(--ui);letter-spacing:2.5px;color:rgba(230,240,255,.38);margin-top:10px}
+.upi-row{width:min(430px,100%);margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.upi-row div{min-width:0}
+.upi-row small{display:block;font:700 9px var(--ui);letter-spacing:2.5px;color:#738099;margin-bottom:7px}
+.upi-row code{display:block;font:600 15px var(--body);color:#eef3fc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.copy-upi{flex:0 0 auto;border:1px solid rgba(255,189,24,.58);background:transparent;color:var(--yellow);border-radius:999px;padding:10px 15px;cursor:pointer;font:700 9px var(--ui);letter-spacing:1.6px;transition:background .2s ease,color .2s ease}
+.copy-upi:hover{background:var(--yellow);color:#050814}
+.copy-toast{position:fixed;left:50%;bottom:25px;z-index:10001;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:var(--yellow);color:#050814;border-radius:999px;padding:11px 17px;font:700 9px var(--ui);letter-spacing:1.8px;transition:.2s ease}
+.copy-toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){
+  .passes-main{padding-top:64px}
+  .passes-hero{padding:62px 20px 58px}
+  .passes-hero-number{font-size:68px}
+  .passes-mega{font-size:clamp(82px,24vw,130px);line-height:.78;margin:18px 0 45px}
+  .passes-intro{grid-template-columns:1fr;min-height:0}
+  .passes-intro-copy{padding:37px 25px 40px}
+  .passes-intro-copy h2{font-size:59px}
+  .passes-intro-copy p{font-size:15px;line-height:1.7}
+  .passes-intro-mark{border-left:0;border-top:1px solid var(--line);height:220px;padding:25px}
+  .passes-intro-mark:before{width:125px;height:160px}
+  .passes-intro-mark img{width:100px;max-height:135px}
+  .batch-passes{padding:0 16px 75px}
+  .batch-card,.batch-card:nth-child(even){display:flex;flex-direction:column;min-height:0}
+  .batch-card:nth-child(even) .batch-payment{order:2;border-right:0;border-left:0;border-top:1px solid var(--line)}
+  .batch-card:nth-child(even) .batch-copy{order:1}
+  .batch-copy{padding:36px 27px 30px}
+  .batch-copy h3{font-size:88px;margin:20px 0}
+  .batch-invite{font-size:15px;line-height:1.65}
+  .batch-prompt{font-size:12px;margin-top:22px}
+  .batch-payment{border-left:0;border-top:1px solid var(--line);padding:32px 21px 30px}
+  .qr-placeholder{width:min(270px,78vw)}
+  .upi-row{width:100%}
+  .upi-row code{font-size:13px}
+  .copy-upi{padding:9px 12px}
+}
+@media(max-width:390px){.passes-mega{font-size:78px}.batch-copy h3{font-size:78px}.upi-row code{font-size:11px}}
+
+/* =========================================================
+   PASS FLOW + ACTIONS — integrated maintenance layer
+   ========================================================= */
+.pass-process{max-width:1240px;margin:0 auto 28px;padding:0 5vw 34px;}
+.pass-process-head{border:1px solid var(--line);background:linear-gradient(135deg,rgba(10,20,48,.92),rgba(3,7,22,.9));padding:34px 38px 28px;}
+.pass-process-head h2{font:700 clamp(44px,5vw,70px)/.86 var(--display);margin:12px 0 14px;color:var(--ink);}
+.pass-process-head p{margin:0;color:#aeb9cc;font:500 16px/1.65 var(--body);max-width:760px;}
+.pass-process-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0;background:rgba(3,7,22,.82);}
+.pass-step{min-height:155px;padding:25px 28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;}
+.pass-step+.pass-step{border-left:1px solid var(--line);}
+.pass-step-no{font:700 32px/.9 var(--display);color:var(--cyan);}
+.pass-step strong{display:block;color:var(--ink);font:700 13px/1.2 var(--ui);letter-spacing:1.8px;margin-bottom:10px;}
+.pass-step p{margin:0;color:#9eabc1;font:500 14px/1.6 var(--body);}
+.pass-process-note{border:1px solid rgba(255,189,24,.25);border-top:0;background:rgba(255,189,24,.035);padding:13px 18px;color:#aeb9cc;font:500 12px/1.55 var(--body);}
+.pass-process-note span{color:var(--yellow);font:700 10px var(--ui);letter-spacing:1.7px;margin-right:10px;}
+.batch-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.batch-actions .batch-form-btn{margin-top:0;}
+.batch-ticket-btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;padding:15px 23px;border:1px solid rgba(22,193,210,.7);background:transparent;color:var(--cyan)!important;border-radius:999px;font:700 10px var(--ui);letter-spacing:1.6px;transition:background .2s ease,color .2s ease,transform .2s ease;}
+.batch-ticket-btn:hover{transform:translateY(-2px);background:var(--cyan);color:#050814!important;}
+.batch-ticket-btn span{font-size:16px;}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
+@media(max-width:850px){
+ .pass-process{padding:0 16px 26px;margin-bottom:22px;}
+ .pass-process-head{padding:27px 22px 23px;}
+ .pass-process-head h2{font-size:47px;}
+ .pass-process-head p{font-size:14px;}
+ .pass-process-grid{grid-template-columns:1fr;}
+ .pass-step{min-height:0;padding:21px 22px;}
+ .pass-step+.pass-step{border-left:0;border-top:1px solid var(--line);}
+ .pass-step p{font-size:13px;}
+ .pass-process-note{padding:12px 15px;font-size:11px;}
+ .batch-actions{width:100%;gap:9px;}
+ .batch-actions .batch-form-btn,.batch-actions .batch-ticket-btn{flex:1 1 145px;padding-left:14px;padding-right:14px;}
+}
+
+/* =========================================================
+   GET PASSES — AESTHETIC FLOW + SMOOTH MAINTENANCE LAYER
+   ========================================================= */
+.passes-page{background:#030718;color:var(--ink);}
+.passes-page .passes-main{background:
+  radial-gradient(circle at 78% 18%,rgba(34,199,201,.055),transparent 25%),
+  radial-gradient(circle at 12% 68%,rgba(84,45,145,.055),transparent 28%);}
+.passes-page .passes-intro{grid-template-columns:minmax(0,1fr) 25%;min-height:320px;}
+.passes-page .passes-intro-copy{padding:48px 5.2vw;}
+.passes-page .passes-intro-copy h2{font-size:clamp(52px,5.5vw,82px);line-height:.82;margin:16px 0 22px;}
+.passes-page .passes-intro-copy p{font-size:17px;line-height:1.65;max-width:820px;}
+.passes-page .passes-intro-mark{border-left:1px solid var(--line);padding:22px;}
+.passes-page .passes-intro-mark:before{width:132px;height:150px;border-radius:14px;}
+.passes-page .passes-intro-mark img{width:88px;max-height:112px;}
+
+/* Flowchart: visual sequence instead of a plain text list. */
+.pass-process{max-width:1240px;margin:0 auto 34px;padding:0 5vw 20px;}
+.pass-process-head{border:0;background:transparent;padding:20px 0 24px;}
+.pass-process-head h2{font-size:clamp(48px,5.5vw,78px);line-height:.84;letter-spacing:-1px;margin:12px 0 12px;}
+.pass-process-head p{font-size:17px;line-height:1.55;color:#aeb9cc;}
+.pass-flowchart{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr) 54px minmax(0,1fr);align-items:stretch;gap:0;}
+.flow-node{position:relative;min-height:220px;padding:28px 28px 27px;border:1px solid rgba(230,240,255,.14);background:linear-gradient(145deg,rgba(10,20,48,.9),rgba(3,7,22,.94));overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.18);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;}
+.flow-node:before{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(34,199,201,.035),transparent 42%,rgba(255,194,26,.025));pointer-events:none;}
+.flow-node:hover{transform:translateY(-4px);border-color:rgba(34,199,201,.45);box-shadow:0 18px 42px rgba(0,0,0,.25);}
+.flow-number{position:absolute;right:18px;top:15px;font:700 46px/.8 var(--display);color:rgba(221,245,255,.10);}
+.flow-icon{position:relative;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(34,199,201,.55);color:var(--cyan);font:700 21px var(--ui);margin-bottom:25px;background:rgba(34,199,201,.035);}
+.flow-copy{position:relative;max-width:320px;}
+.flow-copy span{display:block;color:var(--yellow);font:700 9px var(--ui);letter-spacing:2.4px;margin-bottom:8px;}
+.flow-copy strong{display:block;color:var(--ink);font:700 18px/1.05 var(--ui);letter-spacing:1.5px;margin-bottom:12px;}
+.flow-copy p{margin:0;color:#aeb9cc;font:500 14px/1.58 var(--body);}
+.flow-connector{display:grid;place-items:center;color:var(--yellow);position:relative;}
+.flow-connector:before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,rgba(34,199,201,.45),rgba(255,194,26,.5));}
+.flow-connector span{position:relative;z-index:1;width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(255,194,26,.45);background:#050a1a;border-radius:50%;font:700 20px var(--ui);}
+.pass-process-note{margin-top:14px;border:1px solid rgba(255,194,26,.22);background:rgba(255,194,26,.035);padding:14px 18px;color:#aeb9cc;font:500 13px/1.55 var(--body);}
+.pass-process-note span{color:var(--yellow);font:700 9px var(--ui);letter-spacing:2px;margin-right:10px;}
+
+/* Batch cards: stronger hierarchy, cleaner buttons, less visual weight. */
+.batch-list{gap:24px;}
+.batch-card{min-height:500px;content-visibility:auto;contain:layout paint;contain-intrinsic-size:500px;box-shadow:0 16px 40px rgba(0,0,0,.2);}
+.batch-copy{padding:62px 66px;}
+.batch-kicker{font-size:11px;letter-spacing:3.4px;}
+.batch-copy h3{font-size:clamp(110px,9vw,156px);line-height:.7;margin:24px 0 30px;}
+.batch-invite{font-size:19px;line-height:1.68;max-width:650px;}
+.batch-prompt{font-size:15px;line-height:1.55;margin-top:27px;}
+.batch-actions{gap:11px;margin-top:20px;}
+.batch-form-btn,.batch-ticket-btn{min-height:50px;padding:0 24px;border-radius:14px;font-size:10px;letter-spacing:1.8px;box-shadow:0 8px 0 rgba(0,0,0,.12);}
+.batch-form-btn{background:linear-gradient(135deg,#ffc21a,#ff9f1c);}
+.batch-form-btn:hover,.batch-ticket-btn:hover{transform:translateY(-3px);box-shadow:0 11px 0 rgba(0,0,0,.15);}
+.batch-ticket-btn{border:1px solid rgba(34,199,201,.55);background:rgba(34,199,201,.045);color:#c9fbfc!important;}
+.batch-ticket-btn:hover{background:var(--cyan);color:#050814!important;}
+.batch-payment{padding:44px 44px;}
+.qr-label{font-size:10px;letter-spacing:3px;margin-bottom:18px;}
+.qr-placeholder{width:min(320px,100%);aspect-ratio:1/1;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;}
+.qr-placeholder img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;margin:0;padding:0;border:0;}
+.qr-placeholder span,.qr-placeholder small{display:none;}
+.upi-row{margin-top:22px;}
+.upi-row small{font-size:9px;letter-spacing:2.6px;}
+.upi-row code{font-size:16px;}
+.copy-upi{min-height:40px;padding:0 16px;border-radius:12px;font-size:9px;transition:background .2s ease,color .2s ease,transform .2s ease;}
+.copy-upi:hover{transform:translateY(-2px);}
+
+@media(max-width:850px){
+  .passes-page .passes-intro{grid-template-columns:1fr;}
+  .passes-page .passes-intro-mark{height:190px;border-left:0;border-top:1px solid var(--line);}
+  .passes-page .passes-intro-mark:before{width:116px;height:136px;}
+  .passes-page .passes-intro-mark img{width:76px;max-height:100px;}
+  .pass-process{padding:0 16px 24px;}
+  .pass-process-head{padding:18px 5px 22px;}
+  .pass-process-head h2{font-size:clamp(45px,13vw,62px);}
+  .pass-process-head p{font-size:14px;}
+  .pass-flowchart{grid-template-columns:1fr;gap:0;}
+  .flow-node{min-height:0;padding:25px 22px 24px;}
+  .flow-connector{height:42px;}
+  .flow-connector:before{left:50%;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,rgba(34,199,201,.45),rgba(255,194,26,.5));}
+  .flow-connector span{width:34px;height:34px;transform:rotate(90deg);}
+  .pass-process-note{font-size:11px;padding:12px 14px;}
+  .batch-card{content-visibility:auto;contain-intrinsic-size:720px;}
+  .batch-copy{padding:38px 27px 31px;}
+  .batch-copy h3{font-size:clamp(88px,24vw,116px);margin:20px 0 24px;}
+  .batch-invite{font-size:15.5px;line-height:1.62;}
+  .batch-prompt{font-size:13px;}
+  .batch-actions .batch-form-btn,.batch-actions .batch-ticket-btn{min-height:50px;box-shadow:0 7px 0 rgba(0,0,0,.11);}
+  .batch-payment{padding:34px 21px 31px;}
+  .qr-placeholder{width:min(280px,78vw);}
+  .upi-row code{font-size:14px;}
+}
+@media(max-width:390px){.batch-actions .batch-form-btn,.batch-actions .batch-ticket-btn{font-size:8.5px;padding:0 12px}.upi-row code{font-size:12px}}
+
+/* QR IMAGE FIT — enforced square containment */
+.passes-page .qr-placeholder{aspect-ratio:1/1;overflow:hidden;}
+.passes-page .qr-placeholder img{display:block!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;object-fit:contain!important;object-position:center!important;margin:0!important;padding:0!important;}
+
+/* =========================================================
+   EVENT CATALOG + SHARING + RESPONSIVE FRONT-PAGE NAV
+   ========================================================= */
+.mobile-nav-actions{display:none;align-items:center;gap:8px;flex:0 0 auto}
+.mobile-nav-link{font:700 8px var(--ui);letter-spacing:1.1px;padding:9px 10px;border:1px solid rgba(125,210,235,.24);border-radius:999px;color:#dce8f6;white-space:nowrap;transition:.25s}
+.mobile-nav-link:hover{color:var(--yellow);border-color:rgba(255,189,24,.55)}
+.event-card{position:relative}
+.event-share{position:absolute;top:10px;right:10px;z-index:8;width:36px;height:36px;border:2px solid #050814;border-radius:50%;background:rgba(255,255,255,.82);color:#050814;display:grid;place-items:center;font:700 18px/1 var(--ui);cursor:pointer;box-shadow:4px 5px 0 #050814;transition:transform .25s,background .25s,color .25s,box-shadow .25s}
+.event-share:hover{transform:translateY(-3px) rotate(-8deg);background:#050814;color:#fff;box-shadow:6px 7px 0 rgba(0,0,0,.32)}
+.event-share:disabled{opacity:.7;cursor:wait}
+.event-focus{animation:eventFocus 2.2s ease both}
+@keyframes eventFocus{0%,100%{box-shadow:12px 13px 0 #02030a}20%,55%{box-shadow:0 0 0 5px rgba(255,189,24,.55),18px 20px 0 #02030a}}
+
+.catalog-shell{min-height:100vh;padding:145px 5vw 110px;background:radial-gradient(circle at 50% 0,rgba(22,193,210,.08),transparent 30%),linear-gradient(180deg,#030716,#050a1c)}
+.catalog-hero{max-width:1180px;margin:0 auto 80px}
+.catalog-hero .mega{font:700 clamp(82px,11vw,165px)/.73 var(--display);letter-spacing:-2px;margin:15px 0 28px}
+.catalog-hero .mega span{color:var(--yellow)}
+.catalog-hero p{max-width:690px;color:#aab5c9;font:500 15px/1.7 var(--body);margin:0}
+.catalog-day{max-width:1280px;margin:0 auto 95px}
+.catalog-day-head{display:flex;align-items:flex-end;justify-content:space-between;gap:25px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:18px}
+.catalog-day-label{font:700 9px var(--ui);letter-spacing:4px;color:var(--cyan)}
+.catalog-day-head h2{font:700 clamp(48px,6vw,86px)/.8 var(--display);margin:12px 0 0;text-transform:uppercase}
+.catalog-day-count{font:700 9px var(--ui);letter-spacing:2px;color:var(--yellow);padding-bottom:8px;white-space:nowrap}
+.catalog-list{display:flex;flex-direction:column;gap:11px}
+.catalog-event{position:relative;display:grid;grid-template-columns:125px 88px minmax(0,1fr) 40px;align-items:center;gap:18px;padding:13px 16px;border:1px solid rgba(220,235,255,.14);background:linear-gradient(105deg,rgba(11,20,46,.9),rgba(4,8,23,.82));min-height:122px;overflow:hidden;transition:transform .35s,border-color .35s,background .35s,box-shadow .35s}
+.catalog-event:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--yellow);opacity:.9}
+.catalog-event:nth-child(2n):before{background:var(--cyan)}
+.catalog-event:nth-child(3n):before{background:var(--pink)}
+.catalog-event:nth-child(4n):before{background:var(--purple)}
+.catalog-event:hover{transform:translateX(8px);border-color:rgba(255,189,24,.45);background:linear-gradient(105deg,rgba(17,30,64,.96),rgba(5,10,28,.92));box-shadow:10px 11px 0 rgba(0,0,0,.24)}
+.catalog-time{display:flex;flex-direction:column;padding-left:7px}
+.catalog-time strong{font:700 22px/.9 var(--display);color:#f5f8ff;text-transform:uppercase}
+.catalog-time span{font:700 9px var(--ui);letter-spacing:1.4px;color:#70809c;margin-top:7px}
+.catalog-poster{width:88px;aspect-ratio:3/4;border:1px solid rgba(255,255,255,.16);background:#07101e;overflow:hidden;display:grid;place-items:center}
+.catalog-poster img{width:100%;height:100%;object-fit:cover;display:block}
+.catalog-event-main{min-width:0}
+.catalog-index{font:700 8px var(--ui);letter-spacing:2px;color:#5ed2df;margin-bottom:7px}
+.catalog-event-main h3{font:700 clamp(28px,3.2vw,47px)/.82 var(--display);margin:0 0 8px;overflow-wrap:anywhere}
+.catalog-event-main p{font:500 11px/1.45 var(--body);color:#8e9bb2;max-width:700px;margin:0 0 10px}
+.catalog-meta{display:flex;flex-wrap:wrap;gap:12px 22px;font:700 7.5px var(--ui);letter-spacing:1.4px;color:#667692}
+.catalog-meta b{color:#dce8f6;margin-left:4px}
+.catalog-arrow{width:35px;height:35px;border:1px solid rgba(255,255,255,.18);border-radius:50%;display:grid;place-items:center;font:700 16px var(--ui);color:var(--yellow);transition:.3s}
+.catalog-event:hover .catalog-arrow{background:var(--yellow);color:#050814;border-color:#050814;transform:rotate(-12deg)}
+
+@media(max-width:850px){
+  .mobile-nav-actions{display:flex!important}
+  .mobile-pass{display:none!important}
+  .nav .desktop-nav{display:none!important}
+  .nav .brand-logo,.nav .brand img{width:142px!important;max-width:142px!important;max-height:46px!important}
+  .nav .brand{max-width:145px!important}
+  .mobile-nav-link{font-size:7px;padding:8px 8px;letter-spacing:.9px}
+  .catalog-shell{padding:118px 16px 80px}
+  .catalog-hero{margin-bottom:60px}
+  .catalog-hero .mega{font-size:clamp(72px,21vw,112px);line-height:.76}
+  .catalog-hero p{font-size:13px;line-height:1.6}
+  .catalog-day{margin-bottom:68px}
+  .catalog-day-head{margin-bottom:14px}
+  .catalog-day-head h2{font-size:clamp(43px,12vw,65px)}
+  .catalog-day-count{font-size:7px}
+  .catalog-event{grid-template-columns:72px 62px minmax(0,1fr) 28px;gap:10px;padding:10px 9px;min-height:105px}
+  .catalog-time strong{font-size:15px}
+  .catalog-time span{font-size:7px;letter-spacing:.8px}
+  .catalog-poster{width:62px}
+  .catalog-index{font-size:6px;letter-spacing:1.3px;margin-bottom:5px}
+  .catalog-event-main h3{font-size:clamp(21px,6vw,31px);line-height:.88;margin-bottom:6px}
+  .catalog-event-main p{font-size:9px;line-height:1.3;margin-bottom:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .catalog-meta{font-size:6px;gap:6px 9px;line-height:1.2}
+  .catalog-arrow{width:27px;height:27px;font-size:12px}
+  .event-share{width:32px;height:32px;top:7px;right:7px;font-size:16px}
+}
+@media(max-width:390px){
+  .nav .brand-logo,.nav .brand img{width:132px!important;max-width:132px!important}
+  .mobile-nav-actions{gap:5px}
+  .mobile-nav-link{padding:7px 7px;font-size:6.5px}
+  .catalog-event{grid-template-columns:63px 56px minmax(0,1fr) 25px;gap:7px}
+  .catalog-poster{width:56px}
+  .catalog-time strong{font-size:13px}
+  .catalog-event-main h3{font-size:20px}
+  .catalog-event-main p{font-size:8.2px}
+  .catalog-meta{font-size:5.5px}
+}
